@@ -1,0 +1,165 @@
+// Colors
+
+$background-primary-color: #0D2133;
+
+$header-primary-color: #FFC200;
+$header-secondary-color: #FFFFFF;
+
+$border-primary-color: #538EA6;
+
+// General
+
+body {
+  margin-bottom: 250px;
+}
+
+@media screen and (max-width: 767px) {
+  body {
+    margin-bottom: 0px;
+  }
+}
+
+// Navbar
+
+.navbar-custom {
+  height: 60px;
+  background-color: $background-primary-color;
+  border-bottom: $border-primary-color 1px solid;
+}
+/* change the brand and text color */
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+  color: #FFFFFF;
+
+}
+/* change the link color */
+.navbar-custom .navbar-nav .nav-link {
+  color: #FFFFFF;
+}
+/* change the color of active or hovered links */
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+  color: #6FA8BF;
+}
+
+/*
+ * Change navbar-toggler inside lines color (stroke)
+ * HT: https://stackoverflow.com/questions/41896043/bootstrap-4-collapsed-navbar-background-color
+ */
+span.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  color: white;
+}
+
+// Logo
+
+.logo {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: white;
+}
+
+// Jumbotron
+
+.jumbotron {
+  -webkit-box-shadow: 0 0 15px black;
+  box-shadow: 0 0 15px black;
+  background: url(/img/bg/header-map.png);
+  padding: 15px 0 20px 0;
+  text-align: left;
+  margin: 0 0 25px 0;
+  border: 0px;
+}
+
+// Headings
+
+.jumbotron h1 {
+  color: $header-primary-color;
+  font-size: 3em;
+  font-weight: 900;
+}
+
+.jumbotron h2 {
+  font-size: 2em;
+  margin-top: 3px;
+  color: $header-secondary-color;
+  font-weight: 700;
+}
+
+/**
+ * Cool footer from https://tutorialzine.com/2016/10/freebie-5-fantastic-bootstrap-footers
+ * Sticky footer help thanks to https://teamtreehouse.com/library/css-flexbox-layout/building-a-layout-with-flexbox/creating-a-sticky-footer-with-flexbox
+ */
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding-top: 20px;
+  height: 250px;
+  line-height: 0px; /* Vertically center the text there */
+  background-color: $background-primary-color;
+}
+
+@media screen and (max-width: 767px) {
+  .footer {
+    position: relative;
+    width: 100%;
+    padding-top: 20px;
+    line-height: 0px; /* Vertically center the text there */
+    background-color: $background-primary-color;
+  }
+}
+
+#myFooter .footer-copyright {
+  padding-top: 10px;
+  padding-bottom: 3px;
+  text-align: center;
+  color: #ccc;
+  background-color: $background-primary-color;
+}
+
+#myFooter ul {
+  list-style-type: none;
+  padding-left: 0;
+  line-height: 1.0;
+}
+
+#myFooter h5 {
+  font-size: 18px;
+  color: white;
+  font-weight: bold;
+}
+
+#myFooter .myCols {
+  text-align: center;
+}
+
+#myFooter .social-networks {
+  background-color: $background-primary-color;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 100%;
+}
+
+#myFooter .social-networks a {
+  font-size: 32px;
+  margin-right: 5px;
+  margin-left: 5px;
+  color: #f9f9f9;
+  padding: 10px;
+  transition: 0.2s;
+}
+
+#myFooter .social-networks a:hover {
+  text-decoration: none;
+}
+
+@media screen and (max-width: 767px) {
+  #myFooter {
+    text-align: center;
+  }
+}

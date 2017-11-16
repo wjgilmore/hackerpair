@@ -26,10 +26,6 @@ $app = new Illuminate\Foundation\Application(
 |
 */
 
-//$app->configureMonologUsing(function($monolog) {
-//    $monolog->pushHandler(new \Monolog\Handler\ChromePHPHandler());
-//});
-
 $app->singleton(
     Illuminate\Contracts\Http\Kernel::class,
     App\Http\Kernel::class

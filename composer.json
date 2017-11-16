@@ -8,7 +8,9 @@
         "php": ">=7.0.0",
         "fideloper/proxy": "~3.3",
         "laravel/framework": "5.5.*",
-        "laravel/tinker": "~1.0"
+        "laravel/tinker": "~1.0",
+        "laravelcollective/html": "^5.5",
+        "laravelnews/laravel-twbs4": "^1.1"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.1",

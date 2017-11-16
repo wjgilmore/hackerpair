@@ -1,9 +1,13 @@
-
 // Fonts
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,600");
+@import url("https://fonts.googleapis.com/css?family=Merriweather:300,400,600");
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:600,700,900");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:600,700");
 
 // Variables
 @import "variables";
 
 // Bootstrap
-@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+@import "~bootstrap/scss/bootstrap";
+
+@import "styles";

@@ -39,7 +39,15 @@ class EventsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $event = Event::create(
+            $request->input()
+        );
+
+        flash('Event created!')->success();
+
+        return redirect()->route('events.show', ['event' => $event]);
+
     }
 
     /**
@@ -80,7 +88,9 @@ class EventsController extends Controller
             $request->input()
         );
 
-        return redirect()->route('events.edit', $event)->with('message', 'Event updated!');
+        flash('Event updated!')->success();
+
+        return redirect()->route('events.edit', $event);
 
     }
 

@@ -2,18 +2,6 @@
 
 @section('content')
 
-    {{ link_to_route('events.edit', 'Edit Event', ['event' => $event])}}
-
-    <br />
-
-    {!! Form::open(
-  [
-    'route' => ['events.destroy', $event],
-    'method' => 'delete'
-  ]) !!}
-    {!! Form::submit('Delete Event', ['class' => 'btn btn-danger']) !!}
-    {!! Form::close() !!}
-
     <h1>{{ $event->name }}</h1>
 
     <p>
@@ -25,5 +13,17 @@
     <p>
         {{ $event->description }}
     </p>
+
+    {{ link_to_route('events.edit', 'Edit Event', ['event' => $event])}}
+
+    <br />
+
+    {!! Form::open(
+  [
+    'route' => ['events.destroy', $event],
+    'method' => 'delete'
+  ]) !!}
+    {!! Form::submit('Delete Event', ['class' => 'btn btn-danger']) !!}
+    {!! Form::close() !!}
 
 @endsection

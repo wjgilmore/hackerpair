@@ -14,15 +14,16 @@ class Event extends Model
 
     protected $dates = [
         'created_at',
-        'updated_at',
         'started_at',
+        'updated_at'
     ];
 
     protected $fillable = [
-        'name',
-        'venue',
+        'city',
         'description',
-        'city'
+        'name',
+        'slug',
+        'venue'
     ];
 
     protected static function boot()
@@ -30,9 +31,9 @@ class Event extends Model
 
         parent::boot();
 
-        static::addGlobalScope('published', function (Builder $builder) {
-           $builder->where('published', '=', 1);
-        });
+        //static::addGlobalScope('published', function (Builder $builder) {
+        //   $builder->where('published', '=', 1);
+        //});
 
     }
 

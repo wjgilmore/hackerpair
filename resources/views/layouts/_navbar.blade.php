@@ -29,7 +29,7 @@
                     {{ link_to_route('contact.index', 'Contact Us', [], ['class' => 'nav-link']) }}
                 </li>
                 <li class="nav-item">
-                    {{ link_to_route('about.book', 'About the Book', [], ['class' => 'nav-link']) }}
+                    {{ link_to_route('about.book', 'The Book', [], ['class' => 'nav-link']) }}
                 </li>
             </ul>
             <ul class="navbar-nav">
@@ -51,10 +51,13 @@
                             </form>
                         </div>
                     </li>
-                    @else
+                @else
                         <li class="nav-item"><a href="{{ route('login') }}" class="nav-link">Login</a></li>
                         <li class="nav-item"><a href="{{ route('register') }}" class="nav-link">Register</a></li>
-                        @endauth
+                @endauth
+                <li class="nav-item">
+                    {!! \App\Helpers\Helpers::link_to_route_html('search.index','<i class="fa fa-search"></i>', null, ['class' => 'nav-link']) !!}
+                </li>
             </ul>
             </ul>
         </div>

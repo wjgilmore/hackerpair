@@ -10,13 +10,9 @@ $border-primary-color: #538EA6;
 // General
 
 body {
-  margin-bottom: 250px;
-}
-
-@media screen and (max-width: 767px) {
-  body {
-    margin-bottom: 0px;
-  }
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 // Navbar
@@ -89,29 +85,54 @@ span.navbar-toggler-icon {
 }
 
 /**
- * Cool footer from https://tutorialzine.com/2016/10/freebie-5-fantastic-bootstrap-footers
- * Sticky footer help thanks to https://teamtreehouse.com/library/css-flexbox-layout/building-a-layout-with-flexbox/creating-a-sticky-footer-with-flexbox
+ * Cool footer HT: https://tutorialzine.com/2016/10/freebie-5-fantastic-bootstrap-footers
+ * Sticky footer HT: https://teamtreehouse.com/library/css-flexbox-layout/building-a-layout-with-flexbox/creating-a-sticky-footer-with-flexbox
  */
 
+.footer {
+  margin-top: auto;
+  width: 100%;
+  background-color: $background-primary-color;
+  text-align: center;
+  padding-top: 20px;
+}
+
+/*
 .footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  padding-top: 20px;
   height: 250px;
-  line-height: 0px; /* Vertically center the text there */
+  padding-top: 20px;
+  line-height: 0px;
   background-color: $background-primary-color;
+  text-align: center;
+}
+
+.footer-mobile {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  padding-top: 20px;
+  line-height: 0px;
+  background-color: $background-primary-color;
+  text-align: center;
+  color: white;
+}
+
+@media screen and (min-width: 767px) {
+  .footer-mobile {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 767px) {
   .footer {
-    position: relative;
-    width: 100%;
-    padding-top: 20px;
-    line-height: 0px; /* Vertically center the text there */
-    background-color: $background-primary-color;
+    display: none;
   }
 }
+*/
 
 #myFooter .footer-copyright {
   padding-top: 10px;
@@ -131,10 +152,6 @@ span.navbar-toggler-icon {
   font-size: 18px;
   color: white;
   font-weight: bold;
-}
-
-#myFooter .myCols {
-  text-align: center;
 }
 
 #myFooter .social-networks {

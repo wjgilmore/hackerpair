@@ -1,7 +1,7 @@
-<footer class="footer" id="myFooter">
+<footer class="footer d-md-block d-xs-none" id="myFooter">
     <div class="container">
         <div class="row">
-            <div class="col-md-3 col-sm-12 myCols">
+            <div class="col-md-3 col-sm-12">
                 <h5>Get started</h5>
                 <ul>
                     <li>
@@ -12,7 +12,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="col-md-3 col-sm-12 myCols">
+            <div class="col-md-3 col-sm-12">
                 <h5>About Us</h5>
                 <ul>
                     <li>
@@ -23,7 +23,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="col-md-3 col-sm-12 myCols">
+            <div class="col-md-3 col-sm-12">
                 <h5>Support</h5>
                 <ul>
                     <li>
@@ -34,7 +34,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="col-md-3 col-sm-12 myCols">
+            <div class="col-md-3 col-sm-12">
                 <h5>Legal</h5>
                 <ul>
                     <li>

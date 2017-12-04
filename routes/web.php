@@ -21,14 +21,11 @@ Route::view('about/tos', 'about.tos')->name('about.tos');
 
 Route::view('contact', 'contact.index')->name('contact.index');
 
-Route::get('events', 'EventsController@index')->name('events.index');
-Route::get('events/{id}', 'EventsController@show')->name('events.show');
-
-Route::get('languages', 'LanguagesController@index')->name('languages.index');
-
-Route::get('locations', 'LocationsController@index')->name('locations.index');
-
-Route::get('map', 'MapsController@index')->name('maps.index');
+Route::resource('events', 'EventsController');
+Route::resource('languages', 'LanguagesController');
+Route::resource('locations', 'LocationsController');
+Route::resource('maps', 'MapsController');
+Route::resource('search', 'SearchController');
 
 Auth::routes();
 

@@ -1,26 +1,26 @@
 @extends('layouts.app')
 
 @section('jumbotron')
-        <div class="jumbotron">
-                <div class="container">
-                        <h1>Events</h1>
-                        <h2>Find an event that interests you!</h2>
-                </div>
+    <div class="jumbotron">
+        <div class="container">
+            <h1>Events</h1>
+            <h2>Find an event that interests you!</h2>
         </div>
+    </div>
 @endsection
 
 @section('content')
 
-        <div class="row">
-                <div class="col">
+    <h1>Events</h1>
 
-                        <ul>
-                                @foreach ($events as $event)
-                                        <li>{{ $event }}</li>
-                                @endforeach
-                        </ul>
+    <ul>
+        @forelse ($events as $event)
+            <li>{{ link_to_route('events.show', $event->name, ['slug' => $event->slug]) }}</li>
+        @empty
+            <li>No events found!</li>
+        @endforelse
+    </ul>
 
-                </div>
-        </div>
+    {!! $events->links('vendor.pagination.simple-bootstrap-4') !!}
 
 @endsection

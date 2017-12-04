@@ -27,5 +27,10 @@
         <env name="CACHE_DRIVER" value="array"/>
         <env name="SESSION_DRIVER" value="array"/>
         <env name="QUEUE_DRIVER" value="sync"/>
+        <env name="DB_HOST" value="local.mysql.com" />
+        <env name="DB_PORT" value="3306" />
+        <env name="DB_DATABASE" value="test_hackerpair" />
+        <env name="DB_USERNAME" value="homestead" />
+        <env name="DB_PASSWORD" value="secret" />
     </php>
 </phpunit>

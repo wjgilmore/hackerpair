@@ -22,7 +22,7 @@
   --primary: #3097D1;
   --secondary: #868e96;
   --success: #2ab27b;
-  --info: #8eb4cb;
+  --info: #0D2133;
   --warning: #cbb956;
   --danger: #bf5329;
   --light: #f8f9fa;
@@ -2062,16 +2062,16 @@ pre code {
 .table-info,
 .table-info > th,
 .table-info > td {
-  background-color: #dfeaf0;
+  background-color: #bbc1c6;
 }
 
 .table-hover .table-info:hover {
-  background-color: #cedfe8;
+  background-color: #adb4ba;
 }
 
 .table-hover .table-info:hover > td,
 .table-hover .table-info:hover > th {
-  background-color: #cedfe8;
+  background-color: #adb4ba;
 }
 
 .table-warning,
@@ -2893,37 +2893,37 @@ fieldset[disabled] a.btn {
 }
 
 .btn-info {
-  color: #111;
-  background-color: #8eb4cb;
-  border-color: #8eb4cb;
+  color: #fff;
+  background-color: #0D2133;
+  border-color: #0D2133;
 }
 
 .btn-info:hover {
-  color: #111;
-  background-color: #74a3bf;
-  border-color: #6b9dbb;
+  color: #fff;
+  background-color: #050d15;
+  border-color: #03070a;
 }
 
 .btn-info:focus,
 .btn-info.focus {
-  -webkit-box-shadow: 0 0 0 0.2rem rgba(142, 180, 203, 0.5);
-          box-shadow: 0 0 0 0.2rem rgba(142, 180, 203, 0.5);
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(13, 33, 51, 0.5);
+          box-shadow: 0 0 0 0.2rem rgba(13, 33, 51, 0.5);
 }
 
 .btn-info.disabled,
 .btn-info:disabled {
-  background-color: #8eb4cb;
-  border-color: #8eb4cb;
+  background-color: #0D2133;
+  border-color: #0D2133;
 }
 
 .btn-info:not([disabled]):not(.disabled):active,
 .btn-info:not([disabled]):not(.disabled).active,
 .show > .btn-info.dropdown-toggle {
   color: #fff;
-  background-color: #6b9dbb;
-  border-color: #6297b7;
-  -webkit-box-shadow: 0 0 0 0.2rem rgba(142, 180, 203, 0.5);
-          box-shadow: 0 0 0 0.2rem rgba(142, 180, 203, 0.5);
+  background-color: #03070a;
+  border-color: black;
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(13, 33, 51, 0.5);
+          box-shadow: 0 0 0 0.2rem rgba(13, 33, 51, 0.5);
 }
 
 .btn-warning {
@@ -3168,27 +3168,27 @@ fieldset[disabled] a.btn {
 }
 
 .btn-outline-info {
-  color: #8eb4cb;
+  color: #0D2133;
   background-color: transparent;
   background-image: none;
-  border-color: #8eb4cb;
+  border-color: #0D2133;
 }
 
 .btn-outline-info:hover {
   color: #fff;
-  background-color: #8eb4cb;
-  border-color: #8eb4cb;
+  background-color: #0D2133;
+  border-color: #0D2133;
 }
 
 .btn-outline-info:focus,
 .btn-outline-info.focus {
-  -webkit-box-shadow: 0 0 0 0.2rem rgba(142, 180, 203, 0.5);
-          box-shadow: 0 0 0 0.2rem rgba(142, 180, 203, 0.5);
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(13, 33, 51, 0.5);
+          box-shadow: 0 0 0 0.2rem rgba(13, 33, 51, 0.5);
 }
 
 .btn-outline-info.disabled,
 .btn-outline-info:disabled {
-  color: #8eb4cb;
+  color: #0D2133;
   background-color: transparent;
 }
 
@@ -3196,10 +3196,10 @@ fieldset[disabled] a.btn {
 .btn-outline-info:not([disabled]):not(.disabled).active,
 .show > .btn-outline-info.dropdown-toggle {
   color: #fff;
-  background-color: #8eb4cb;
-  border-color: #8eb4cb;
-  -webkit-box-shadow: 0 0 0 0.2rem rgba(142, 180, 203, 0.5);
-          box-shadow: 0 0 0 0.2rem rgba(142, 180, 203, 0.5);
+  background-color: #0D2133;
+  border-color: #0D2133;
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(13, 33, 51, 0.5);
+          box-shadow: 0 0 0 0.2rem rgba(13, 33, 51, 0.5);
 }
 
 .btn-outline-warning {
@@ -5176,15 +5176,15 @@ tbody.collapse.show {
 }
 
 .badge-info {
-  color: #111;
-  background-color: #8eb4cb;
+  color: #fff;
+  background-color: #0D2133;
 }
 
 .badge-info[href]:focus,
 .badge-info[href]:hover {
-  color: #111;
+  color: #fff;
   text-decoration: none;
-  background-color: #6b9dbb;
+  background-color: #03070a;
 }
 
 .badge-warning {
@@ -5321,17 +5321,17 @@ tbody.collapse.show {
 }
 
 .alert-info {
-  color: #4a5e6a;
-  background-color: #e8f0f5;
-  border-color: #dfeaf0;
+  color: #07111b;
+  background-color: #cfd3d6;
+  border-color: #bbc1c6;
 }
 
 .alert-info hr {
-  border-top-color: #cedfe8;
+  border-top-color: #adb4ba;
 }
 
 .alert-info .alert-link {
-  color: #35434c;
+  color: black;
 }
 
 .alert-warning {
@@ -5618,28 +5618,28 @@ button.list-group-item-success.active {
 }
 
 .list-group-item-info {
-  color: #4a5e6a;
-  background-color: #dfeaf0;
+  color: #07111b;
+  background-color: #bbc1c6;
 }
 
 a.list-group-item-info,
 button.list-group-item-info {
-  color: #4a5e6a;
+  color: #07111b;
 }
 
 a.list-group-item-info:focus,
 a.list-group-item-info:hover,
 button.list-group-item-info:focus,
 button.list-group-item-info:hover {
-  color: #4a5e6a;
-  background-color: #cedfe8;
+  color: #07111b;
+  background-color: #adb4ba;
 }
 
 a.list-group-item-info.active,
 button.list-group-item-info.active {
   color: #fff;
-  background-color: #4a5e6a;
-  border-color: #4a5e6a;
+  background-color: #07111b;
+  border-color: #07111b;
 }
 
 .list-group-item-warning {
@@ -6509,12 +6509,12 @@ a.bg-success:hover {
 }
 
 .bg-info {
-  background-color: #8eb4cb !important;
+  background-color: #0D2133 !important;
 }
 
 a.bg-info:focus,
 a.bg-info:hover {
-  background-color: #6b9dbb !important;
+  background-color: #03070a !important;
 }
 
 .bg-warning {
@@ -6598,7 +6598,7 @@ a.bg-dark:hover {
 }
 
 .border-info {
-  border-color: #8eb4cb !important;
+  border-color: #0D2133 !important;
 }
 
 .border-warning {
@@ -9653,12 +9653,12 @@ a.text-success:hover {
 }
 
 .text-info {
-  color: #8eb4cb !important;
+  color: #0D2133 !important;
 }
 
 a.text-info:focus,
 a.text-info:hover {
-  color: #6b9dbb !important;
+  color: #03070a !important;
 }
 
 .text-warning {
@@ -9718,13 +9718,14 @@ a.text-dark:hover {
 }
 
 body {
-  margin-bottom: 250px;
-}
-
-@media screen and (max-width: 767px) {
-  body {
-    margin-bottom: 0px;
-  }
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100vh;
 }
 
 .navbar-custom {
@@ -9795,31 +9796,54 @@ span.navbar-toggler-icon {
 }
 
 /**
- * Cool footer from https://tutorialzine.com/2016/10/freebie-5-fantastic-bootstrap-footers
- * Sticky footer help thanks to https://teamtreehouse.com/library/css-flexbox-layout/building-a-layout-with-flexbox/creating-a-sticky-footer-with-flexbox
+ * Cool footer HT: https://tutorialzine.com/2016/10/freebie-5-fantastic-bootstrap-footers
+ * Sticky footer HT: https://teamtreehouse.com/library/css-flexbox-layout/building-a-layout-with-flexbox/creating-a-sticky-footer-with-flexbox
  */
 
+.footer {
+  margin-top: auto;
+  width: 100%;
+  background-color: #0D2133;
+  text-align: center;
+  padding-top: 20px;
+}
+
+/*
 .footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  padding-top: 20px;
   height: 250px;
+  padding-top: 20px;
   line-height: 0px;
-  /* Vertically center the text there */
-  background-color: #0D2133;
+  background-color: $background-primary-color;
+  text-align: center;
+}
+
+.footer-mobile {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  padding-top: 20px;
+  line-height: 0px;
+  background-color: $background-primary-color;
+  text-align: center;
+  color: white;
+}
+
+@media screen and (min-width: 767px) {
+  .footer-mobile {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 767px) {
   .footer {
-    position: relative;
-    width: 100%;
-    padding-top: 20px;
-    line-height: 0px;
-    /* Vertically center the text there */
-    background-color: #0D2133;
+    display: none;
   }
 }
+*/
 
 #myFooter .footer-copyright {
   padding-top: 10px;
@@ -9839,10 +9863,6 @@ span.navbar-toggler-icon {
   font-size: 18px;
   color: white;
   font-weight: bold;
-}
-
-#myFooter .myCols {
-  text-align: center;
 }
 
 #myFooter .social-networks {

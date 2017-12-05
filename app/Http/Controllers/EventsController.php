@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\EventStoreRequest;
+
 use App\Event;
 use Illuminate\Http\Request;
 
@@ -34,10 +36,12 @@ class EventsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param EventStoreRequest $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+
+
+    public function store(EventStoreRequest $request)
     {
 
         $event = Event::create(
@@ -45,7 +49,6 @@ class EventsController extends Controller
         );
 
         flash('Event created!')->success();
-
         return redirect()->route('events.show', ['event' => $event]);
 
     }

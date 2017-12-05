@@ -21,6 +21,7 @@ Route::view('about/tos', 'about.tos')->name('about.tos');
 
 Route::view('contact', 'contact.index')->name('contact.index');
 
+Route::resource('accounts', 'AccountsController');
 Route::resource('events', 'EventsController');
 Route::resource('languages', 'LanguagesController');
 Route::resource('locations', 'LocationsController');

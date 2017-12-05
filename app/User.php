@@ -15,9 +15,12 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name',
+        'first_name',
         'email',
-        'password',
+        'last_name',
+        'timezone',
+        'title',
+        'zip'
     ];
 
     /**
@@ -31,6 +34,11 @@ class User extends Authenticatable
 
     public function hostedEvents() {
         return $this->hasMany('App\Event');
+    }
+
+    public function getNameAttribute()
+    {
+        return $this->first_name . ' ' . $this->last_name;
     }
 
 }

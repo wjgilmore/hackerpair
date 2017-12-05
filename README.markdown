@@ -107,6 +107,4 @@ Overflow and blog posts which helped me sort out the associated code.
 
 Have questions, problems, or suggestions? E-mail me at wj@wjgilmore.com.
 
-## License
-
 

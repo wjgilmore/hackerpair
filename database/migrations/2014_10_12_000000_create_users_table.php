@@ -16,8 +16,6 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
 
             $table->increments('id');
-            $table->string('provider')->nullable();
-            $table->string('provider_id')->nullable()->unique();
             $table->string('first_name');
             $table->string('last_name');
             $table->string('email');
@@ -27,7 +25,6 @@ class CreateUsersTable extends Migration
             $table->decimal('lat', 10, 8)->nullable();
             $table->decimal('lng', 11, 8)->nullable();
             $table->string('timezone')->nullable();
-            $table->string('zip_current')->nullable();
             $table->string('title')->nullable();
             $table->string('handle_github')->nullable();
             $table->string('handle_twitter')->nullable();
@@ -35,7 +32,6 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
             $table->timestamp('last_login_at')->nullable();
-            $table->timestamp('location_updated_at')->nullable();
         });
     }
 

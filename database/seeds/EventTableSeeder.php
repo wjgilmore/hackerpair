@@ -5,6 +5,7 @@ use Illuminate\Database\Seeder;
 use Carbon\Carbon;
 
 use App\Event;
+use App\User;
 
 class EventTableSeeder extends Seeder
 {
@@ -18,12 +19,17 @@ class EventTableSeeder extends Seeder
 
         DB::table('events')->truncate();
 
+        $users = User::all();
+
         $faker = \Faker\Factory::create();
 
         foreach(range(1,50) as $index)
         {
 
+            $user = $users->random();
+
             Event::create([
+                'user_id'       => $user->id,
                 'name'          => $faker->sentence(2),
                 'published'     => rand(0,1),
                 'started_at'    => $faker->dateTimeBetween('now', '+10 days'),

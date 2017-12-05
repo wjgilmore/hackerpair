@@ -32,13 +32,32 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function hostedEvents() {
-        return $this->hasMany('App\Event');
-    }
+    /**
+     * Accessors and Mutators
+     *
+     */
 
     public function getNameAttribute()
     {
         return $this->first_name . ' ' . $this->last_name;
+    }
+
+    /**
+     * Relationships
+     *
+     */
+
+    /**
+     * Each user resides in a U.S. state
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function state() {
+        return $this->belongsTo('App\State');
+    }
+
+    public function hostedEvents() {
+        return $this->hasMany('App\Event');
     }
 
 }

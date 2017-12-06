@@ -16,6 +16,10 @@ class State extends Model
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
 
+    public function events() {
+        return $this->hasMany('App\Event');
+    }
+
     public function users() {
         return $this->hasMany('App\User');
     }
@@ -46,6 +50,28 @@ class State extends Model
     public function getRouteKeyName()
     {
         return 'abbreviation';
+    }
+
+    /**
+     *
+     * @return \Illuminate\Database\Eloquent\Model|null|static
+     */
+
+    public function mostRecentEvent()
+    {
+
+        return $this->events()->orderBy('id', 'desc')->first();
+
+    }
+
+    public function popularCategories($limit=5)
+    {
+
+        return $this->events()->upcoming()
+            ->join('categories', 'events.category_id', '=', 'categories.id')
+            ->select([\DB::raw('count(category_id) as total'), 'category_id', 'categories.name', 'categories.slug'])
+            ->groupBy('category_id')->get()->take($limit);
+
     }
 
 }

@@ -91,6 +91,31 @@ Finally, run the Artisan seeder to populate the database with seed data:
 
     $ php artisan db:seed
 
+The seeder requires a few minutes to run due to the time required to seed
+the zip codes table.
+
+## TODO
+
+The new edition of Easy Laravel 5 is in beta format, as is the HackerPair
+companion project. Notably certain key features don't yet exist because
+I haven't yet written the associated chapters. :-) Notably, there is
+currently no or little support for:
+
+* Search: I'm planning on integrating Algolia search, and additionally
+  demonstrating how to create powerful search-driven data filters using
+  scopes.
+
+* Avatars: Just for kicks I'd like to add avatars to user profiles
+
+* Tests: A number of demonstrative tests are already in place but I'll
+  be adding plenty more in the coming weeks.
+
+* Mapping: Each event includes a simple map however I'd like to build out some
+  additional cool map-based interfaces.
+
+You can view a complete list of upcoming tasks and other notes on the
+project's Trello board: https://trello.com/b/pqR9nbsH/hackerpair
+
 ## Credits
 
 This zip code data was assembled from a variety of online resources,

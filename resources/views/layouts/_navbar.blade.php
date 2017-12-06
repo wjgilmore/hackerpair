@@ -11,13 +11,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    {{ link_to_route('locations.index', 'Locations', [], ['class' => 'nav-link']) }}
-                </li>
-                <li class="nav-item">
                     {{ link_to_route('events.index', 'Events', [], ['class' => 'nav-link']) }}
                 </li>
                 <li class="nav-item">
-                    {{ link_to_route('languages.index', 'Languages', [], ['class' => 'nav-link']) }}
+                    {{ link_to_route('locations.index', 'Locations', [], ['class' => 'nav-link']) }}
+                </li>
+                <li class="nav-item">
+                    {{ link_to_route('categories.index', 'Categories', [], ['class' => 'nav-link']) }}
                 </li>
                 <li class="nav-item">
                     {{ link_to_route('maps.index', 'Map', [], ['class' => 'nav-link']) }}
@@ -44,6 +44,7 @@
 
                         <ul class="dropdown-menu" aria-labelledby="navbarDropDown">
                             <li>{{ link_to_route('accounts.edit', 'Your Account Profile', ['id' => Auth::user()->id], ['class' => 'dropdown-item']) }}</li>
+                            <li>{{ link_to_route('favorites.index', 'Favorited Events', [], ['class' => 'dropdown-item']) }}</li>
                             <li>
                                 <a href="{{ route('logout') }}"
                                    class="dropdown-item"

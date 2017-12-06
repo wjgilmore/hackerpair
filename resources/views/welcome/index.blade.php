@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.full')
 
 @section('jumbotron')
     <div class="jumbotron">
@@ -13,9 +13,9 @@
 
     <div class="row">
         <div class="col mh-100">
-            <p>
-                Welcome to HackerPair. This is where a list of upcoming events will eventually go.
-            </p>
+
+            @include('partials/_events_table', ['events' => $events])
+
         </div>
     </div>
 

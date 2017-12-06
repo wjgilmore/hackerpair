@@ -84,6 +84,68 @@ span.navbar-toggler-icon {
   font-weight: 700;
 }
 
+// Stars
+
+.fa-star {
+  color: red;
+}
+
+// Cards
+
+.card {
+  border-radius: 0px;
+}
+
+.card-body {
+  padding: 0px;
+}
+
+.card-title {
+  padding: 10px;
+  color: black;
+}
+
+.card-title.map {
+  padding: 0px;
+}
+
+.card-title.nearby {
+  background-color: #2c4762;
+}
+
+.card-subtitle {
+  padding: 5px;
+}
+
+.card-text {
+  padding: 5px;
+}
+
+/**
+ * Event Details
+ */
+
+.event-header-date {
+  color: white;
+}
+
+.event-box {
+  padding: 10px;
+  background-color: white;
+  box-shadow: 0 0 1px black;
+}
+
+.event-bar {
+  padding: 5px 0px 5px 0px;
+}
+
+.event-ticket-box {
+  padding: 10px;
+  color: white;
+  border: 1px white solid;
+  background-color: #77787A;
+}
+
 /**
  * Cool footer HT: https://tutorialzine.com/2016/10/freebie-5-fantastic-bootstrap-footers
  * Sticky footer HT: https://teamtreehouse.com/library/css-flexbox-layout/building-a-layout-with-flexbox/creating-a-sticky-footer-with-flexbox
@@ -96,43 +158,6 @@ span.navbar-toggler-icon {
   text-align: center;
   padding-top: 20px;
 }
-
-/*
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 250px;
-  padding-top: 20px;
-  line-height: 0px;
-  background-color: $background-primary-color;
-  text-align: center;
-}
-
-.footer-mobile {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 50px;
-  padding-top: 20px;
-  line-height: 0px;
-  background-color: $background-primary-color;
-  text-align: center;
-  color: white;
-}
-
-@media screen and (min-width: 767px) {
-  .footer-mobile {
-    display: none;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .footer {
-    display: none;
-  }
-}
-*/
 
 #myFooter .footer-copyright {
   padding-top: 10px;

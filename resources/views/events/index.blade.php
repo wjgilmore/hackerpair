@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.full')
 
 @section('jumbotron')
     <div class="jumbotron">
@@ -11,16 +11,12 @@
 
 @section('content')
 
-    <h1>Events</h1>
+    <div class="row">
+        <div class="col mh-100">
 
-    <ul>
-        @forelse ($events as $event)
-            <li>{{ link_to_route('events.show', $event->name, ['slug' => $event->slug]) }}</li>
-        @empty
-            <li>No events found!</li>
-        @endforelse
-    </ul>
+            @include('partials/_events_table', ['events' => $events])
 
-    {!! $events->links('vendor.pagination.simple-bootstrap-4') !!}
+        </div>
+    </div>
 
 @endsection

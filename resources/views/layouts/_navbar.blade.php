@@ -1,5 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-custom">
+<nav class="navbar navbar-expand-lg navbar-custom navbar-static-top" style="background-color: #0D2133;">
     <div class="container">
+
         <a class="logo" href="{{ url('/') }}">
             HackerPair
         </a>

@@ -12,11 +12,11 @@
     <table class="table table-hover">
         <thead>
         <th>Event</th>
-        <th class="d-none d-md-block">Host</th>
-        <th class="d-none d-md-block">Category</th>
+        <th>Host</th>
+        <th>Category</th>
         <th>Location</th>
         <th>Start Date/Time</th>
-        <th class="d-none d-md-block">Attending</th>
+        <th>Attending</th>
         @if (Auth::check())
             <th>Favorited</th>
         @endif
@@ -28,11 +28,11 @@
                     {{ link_to_route('events.show', $event->name, ['id' => $event]) }}
                     <p style="color: #8c8c8c;">{{ $event->oneliner }}</p>
                 </td>
-                <td class="d-none d-md-block">
+                <td>
                     {{ $event->organizer->first_name }}<br/>
                     <p style="color: #8c8c8c;">{{ $event->organizer->title }}</p>
                 </td>
-                <td class="d-none d-md-block">
+                <td>
                     {{ $event->category->name }}
                 </td>
                 <td>
@@ -43,7 +43,7 @@
                 <td>
                     {{ $event->started_at->format("M d, Y") }} @ {{ $event->started_at->format("h:ia T") }}
                 </td>
-                <td class="d-none d-md-block">
+                <td>
                     {{ $event->attendees->count() }} / {{ $event->max_attendees }}
                 </td>
                 @auth

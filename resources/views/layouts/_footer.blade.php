@@ -19,7 +19,7 @@
                         {{ link_to_route('about.index', 'About HackerPair', [], ['class' => 'nav-link']) }}
                     </li>
                     <li>
-                        {{ link_to_route('contact.index', 'Contact Us', [], ['class' => 'nav-link']) }}
+                        {{ link_to_route('contact.create', 'Contact Us', [], ['class' => 'nav-link']) }}
                     </li>
                 </ul>
             </div>
@@ -30,7 +30,7 @@
                         {{ link_to_route('about.faq', 'FAQ', [], ['class' => 'nav-link']) }}
                     </li>
                     <li>
-                        {{ link_to_route('contact.index', 'Contact Support', [], ['class' => 'nav-link']) }}
+                        {{ link_to_route('contact.create', 'Contact Support', [], ['class' => 'nav-link']) }}
                     </li>
                 </ul>
             </div>

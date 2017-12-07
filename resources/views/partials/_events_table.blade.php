@@ -1,6 +1,6 @@
 @if ($events->count() > 0)
 
-    <p>
+    <p class="d-none d-md-block">
         @auth
             Event times are presented using your currently defined time zone. ({!! link_to_route('accounts.edit', 'Update Time Zone', ['id' => Auth::user()->id]) !!})
         @else
@@ -8,14 +8,15 @@
         @endauth
     </p>
 
+    <div class="table-responsive">
     <table class="table table-hover">
         <thead>
         <th>Event</th>
-        <th>Host</th>
-        <th>Category</th>
+        <th class="d-none d-md-block">Host</th>
+        <th class="d-none d-md-block">Category</th>
         <th>Location</th>
         <th>Start Date/Time</th>
-        <th>Attending</th>
+        <th class="d-none d-md-block">Attending</th>
         @if (Auth::check())
             <th>Favorited</th>
         @endif
@@ -27,12 +28,12 @@
                     {{ link_to_route('events.show', $event->name, ['id' => $event]) }}
                     <p style="color: #8c8c8c;">{{ $event->oneliner }}</p>
                 </td>
-                <td>
+                <td class="d-none d-md-block">
                     {{ $event->organizer->first_name }}<br/>
                     <p style="color: #8c8c8c;">{{ $event->organizer->title }}</p>
                 </td>
-                <td>
-                    INTENT
+                <td class="d-none d-md-block">
+                    {{ $event->category->name }}
                 </td>
                 <td>
                     <span class="glyphicon glyphicon-map-marker" aria-hidden></span> {{ $event->city }}
@@ -42,7 +43,7 @@
                 <td>
                     {{ $event->started_at->format("M d, Y") }} @ {{ $event->started_at->format("h:ia T") }}
                 </td>
-                <td>
+                <td class="d-none d-md-block">
                     {{ $event->attendees->count() }} / {{ $event->max_attendees }}
                 </td>
                 @auth
@@ -54,6 +55,7 @@
         @endforeach
         </tbody>
     </table>
+    </div>
 
     {{ $events->links('vendor.pagination.simple-bootstrap-4') }}
 

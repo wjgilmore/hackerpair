@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Location;
+use Illuminate\Support\Facades\DB;
+
+use App\Event;
 use Illuminate\Http\Request;
 
 class LocationsController extends Controller
@@ -14,72 +16,20 @@ class LocationsController extends Controller
      */
     public function index()
     {
-        //
+
+        $states = Event::select([DB::raw('count(id) as total'), 'state_id'])
+            ->where('published', 1)
+            ->orderBy('total', 'desc')
+            ->groupBy('state_id')->get();
+
+        $cities = Event::select([DB::raw('count(id) as total'), 'city', 'state_id'])
+            ->upcoming()
+            ->orderBy('total', 'desc')
+            ->groupBy('city', 'state_id')
+            ->get();
+
+        return view('locations.index')->withStates($states)->withCities($cities);
+
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Location  $location
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Location $location)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Location  $location
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Location $location)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Location  $location
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Location $location)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Location  $location
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Location $location)
-    {
-        //
-    }
 }

@@ -12,12 +12,14 @@
         <div class="col-md-6 offset-md-3 my-auto" style="padding-top: 25px">
 
             <div style="text-align: center; padding-bottom: 10px;">
-                <a href="/auth/twitter" class="btn btn-lg btn-info" style="margin-right: 25px; background-color: #1A97F0">
+                <a href="/auth/twitter" class="btn btn-lg btn-info btn-block" style="background-color: #1A97F0">
                     <span class="fa fa-twitter"></span> Login with Twitter
                 </a>
-                <a href="/auth/github" class="btn btn-lg btn-info" style="background-color: #000000">
+                <br />
+                <a href="/auth/github" class="btn btn-lg btn-info btn-block" style="background-color: #000000">
                     <span class="fa fa-github"></span> Login with GitHub
-                </a><br /><br />
+                </a>
+                <br />
                 <h3>or</h3>
             </div>
 

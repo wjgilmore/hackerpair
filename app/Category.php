@@ -47,4 +47,11 @@ class Category extends Model
         return 'slug';
     }
 
+    public function mostRecentEvent()
+    {
+
+        return $this->events()->orderBy('id', 'desc')->first();
+
+    }
+
 }

@@ -20,13 +20,10 @@
                     {{ link_to_route('categories.index', 'Categories', [], ['class' => 'nav-link']) }}
                 </li>
                 <li class="nav-item">
-                    {{ link_to_route('maps.index', 'Map', [], ['class' => 'nav-link']) }}
-                </li>
-                <li class="nav-item">
                     {{ link_to_route('about.index', 'About', [], ['class' => 'nav-link']) }}
                 </li>
                 <li class="nav-item">
-                    {{ link_to_route('contact.index', 'Contact Us', [], ['class' => 'nav-link']) }}
+                    {{ link_to_route('contact.create', 'Contact Us', [], ['class' => 'nav-link']) }}
                 </li>
                 <li class="nav-item">
                     {{ link_to_route('about.book', 'The Book', [], ['class' => 'nav-link']) }}
@@ -65,9 +62,11 @@
                     <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">Login</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">Register</a></li>
                 @endauth
+                <!--
                 <li class="nav-item">
                     {!! \App\Helpers\Helpers::link_to_route_html('search.index','<i class="fa fa-search"></i>', null, ['class' => 'nav-link']) !!}
                 </li>
+                -->
             </ul>
 
         </div>

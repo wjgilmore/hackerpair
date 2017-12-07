@@ -98,12 +98,15 @@ the zip codes table.
 
 The new edition of Easy Laravel 5 is in beta format, as is the HackerPair
 companion project. Notably certain key features don't yet exist because
-I haven't yet written the associated chapters. :-) Notably, there is
+I haven't yet written the associated chapters. :-) For instance, there is
 currently no or little support for:
 
 * Search: I'm planning on integrating Algolia search, and additionally
   demonstrating how to create powerful search-driven data filters using
   scopes.
+
+* Column sorting and filtering: Still trying to sort out a proper way to
+  approach this in the book.
 
 * Avatars: Just for kicks I'd like to add avatars to user profiles
 

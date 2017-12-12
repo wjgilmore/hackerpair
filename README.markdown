@@ -1,7 +1,7 @@
 # HackerPair
 
 [HackerPair](http://hackerpair.com) is the companion project to the
-bestselling book, [Easy Laravel 5](http://easylaravelbook.com)],
+bestselling book, [Easy Laravel 5](http://easylaravelbook.com),
 authored by [W. Jason Gilmore](http://www.wjgilmore.com).
 
 ## Installation

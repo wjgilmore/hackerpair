@@ -4,7 +4,7 @@
 
     <div class="row">
         <div class="col-md-8 offset-md-2" style="text-align: center; padding-top: 30px;">
-            <h1>HackerPair Login</h1>
+            <h1>HackerPair</h1>
         </div>
     </div>
 

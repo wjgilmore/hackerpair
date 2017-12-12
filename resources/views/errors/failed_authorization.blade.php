@@ -20,7 +20,7 @@
             </p>
 
             <p>
-                Have we accused an innocent user? {{ link_to_route('contact.index', 'Send us a message.') }}
+                Have we accused an innocent user? {{ link_to_route('contact.create', 'Send us a message.') }}
             </p>
 
         </div>

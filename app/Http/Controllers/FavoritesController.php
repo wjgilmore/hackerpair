@@ -30,11 +30,11 @@ class FavoritesController extends Controller
     public function store(Request $request)
     {
 
-        if (\Auth::user()->favoritedEvent($request->get('id'))) {
-            \Auth::user()->favoriteEvents()->detach($request->get('id'));
+        if ($request->user()->favoritedEvent($request->get('id'))) {
+            $request->user()->favoriteEvents()->detach($request->get('id'));
         } else {
             $event = Event::find($request->get('id'));
-            \Auth::user()->favoriteEvents()->save($event);
+            $request->user()->favoriteEvents()->save($event);
         }
 
     }

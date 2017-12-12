@@ -41,8 +41,10 @@
                         </a>
 
                         <ul class="dropdown-menu" aria-labelledby="navbarDropDown">
-                            <li>{{ link_to_route('accounts.edit', 'Your Account Profile', ['id' => Auth::user()->id], ['class' => 'dropdown-item']) }}</li>
+                            <li>{{ link_to_route('accounts.edit', 'Account Profile', ['id' => Auth::user()->id], ['class' => 'dropdown-item']) }}</li>
                             <li>{{ link_to_route('favorites.index', 'Favorited Events', [], ['class' => 'dropdown-item']) }}</li>
+                            <li>{{ link_to_route('users.attended-events.index', 'Attended Events', ['user' => Auth::user()->id], ['class' => 'dropdown-item']) }}</li>
+                            <li>{{ link_to_route('users.events.index', 'Hosted Events', ['user' => Auth::user()->id], ['class' => 'dropdown-item']) }}</li>
                             <li>
                                 <a href="{{ route('logout') }}"
                                    class="dropdown-item"

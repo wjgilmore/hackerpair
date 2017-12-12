@@ -4,6 +4,8 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+use Auth;
+
 class EventStoreRequest extends FormRequest
 {
     /**
@@ -13,7 +15,7 @@ class EventStoreRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return Auth::check();
     }
 
     /**
@@ -23,9 +25,12 @@ class EventStoreRequest extends FormRequest
      */
     public function rules()
     {
+
         return [
             'name'          => 'required|min:10|max:50',
-            'max_attendees' => 'required|integer|digits_between:2,5',
+            'max_attendees' => 'required|integer',
+            'start_date'    => 'required',
+            'start_time'    => 'required',
             'description'   => 'required'
         ];
     }
@@ -34,11 +39,12 @@ class EventStoreRequest extends FormRequest
     {
 
         return [
-            'required' => 'Please provide an event :attribute',
-            'max_attendees.required' => 'What is the maximum number of attendees allowed to attend your event?',
-            'name.min' => 'Event names must consist of at least 10 characters',
-            'name.max' => 'Event names cannot be longer than 50 characters',
-            'max_attendees.digits_between' => 'We try to keep events cozy, consisting of between 2 and 5 attendees, including you.'
+            'required'                     => 'Please provide an event :attribute',
+            'max_attendees.required'       => 'What is the maximum number of attendees allowed to attend your event?',
+            'name.min'                     => 'Event names must consist of at least 10 characters',
+            'name.max'                     => 'Event names cannot be longer than 50 characters',
+            'start_date.required'          => 'Please provide an event date',
+            'start_time.required'          => 'Please provide an event starting time'
         ];
 
     }

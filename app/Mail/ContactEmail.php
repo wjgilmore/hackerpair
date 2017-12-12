@@ -32,7 +32,7 @@ class ContactEmail extends Mailable
     {
 
         return $this
-            ->to(env('MAIL_SUPPORT'))
+            ->to(config('mail.support.address'))
             ->subject('HackerPair Inquiry')
             ->view('emails.contact');
     }

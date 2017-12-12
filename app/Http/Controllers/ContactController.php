@@ -35,7 +35,7 @@ class ContactController extends Controller
         $contact['email'] = $request->get('email');
         $contact['msg'] = $request->get('msg');
 
-        Mail::to(env('MAIL_SUPPORT'))->send(new ContactEmail($contact));
+        Mail::to(config('mail.support.address'))->send(new ContactEmail($contact));
 
         flash('Your message has been sent!')->success();
 

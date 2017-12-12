@@ -76,8 +76,7 @@ of seemingly realistic data.
 
 Before this data can be used in the seeders, it needs to be compiled using
 the following custom Artisan console command. The script will download two
-source files from GitHub and http://federalgovernmentzipcodes.us/, and then
-assemble a final seed file which will be used in Step #5:
+source files from GitHub and http://federalgovernmentzipcodes.us/ (a free database containing zip code data), and then assemble a final seed file which will be used in Step #5:
 
     $ php artisan hackerpair:compile_zip_code_data
 
@@ -101,12 +100,25 @@ companion project. Notably certain key features don't yet exist because
 I haven't yet written the associated chapters. :-) For instance, there is
 currently no or little support for:
 
+* Query Optimization: Not all of the queries are optimized. Forthcoming.
+
 * Search: I'm planning on integrating Algolia search, and additionally
   demonstrating how to create powerful search-driven data filters using
   scopes.
 
-* Column sorting and filtering: Still trying to sort out a proper way to
-  approach this in the book.
+* Column sorting: This is a very high priority and should be integrated as soon
+as I can write the companion instructional material.
+
+* Event Lifecycle Improvements: All sorts of interesting concepts can be
+introduced by adding event lifecycle features. Forthcoming.
+
+* Analytics: There are lots of opportunities to simulate event and attendance
+  generation, and then use advanced Eloquent queries to query the data in
+  interesting ways.
+
+* Event tagging: Currently only a simple event categorization solution is
+  available. I plan on adding tagging using Spatie's great
+  [Laravel Tags](https://docs.spatie.be/laravel-tags/v2/introduction) package.
 
 * Avatars: Just for kicks I'd like to add avatars to user profiles
 
@@ -131,8 +143,13 @@ In addition, throughout the code you'll find the occasional "hat tip",
 denoted by "HT", pointing to various online resources such as Stack
 Overflow and blog posts which helped me sort out the associated code.
 
+## License
+
+This project is MIT licensed (see LICENSE.markdown). Please do not use the HackerPair name, the 
+Easy Laravel 5 book cover, or other intellectual property without written permission from the appropriate parties.
+
 ## Questions
 
-Have questions, problems, or suggestions? E-mail me at wj@wjgilmore.com.
+Have questions, problems, or suggestions? E-mail Jason at wj@wjgilmore.com.
 
 

@@ -4,6 +4,7 @@ $background-primary-color: #0D2133;
 
 $header-primary-color: #FFC200;
 $header-secondary-color: #FFFFFF;
+$header-tertiary-color: #298CCB;
 
 $border-primary-color: #538EA6;
 
@@ -13,6 +14,19 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+h4 {
+  margin-top: 15px;
+  color: $header-tertiary-color;
+}
+
+// HT: https://stackoverflow.com/questions/19562903/remove-padding-from-columns-in-bootstrap-3
+.row-no-padding {
+  [class*="col-"] {
+    padding-left: 0 !important;
+    padding-right: 5 !important;
+  }
 }
 
 // Navbar
@@ -136,6 +150,7 @@ span.navbar-toggler-icon {
 }
 
 .event-bar {
+  font-size: 0.9em;
   padding: 5px 0px 5px 0px;
 }
 
@@ -143,7 +158,11 @@ span.navbar-toggler-icon {
   padding: 10px;
   color: white;
   border: 1px white solid;
-  background-color: #77787A;
+  background-color: #298CCB;
+}
+
+.event-ticket-box a {
+  color: black;
 }
 
 /**

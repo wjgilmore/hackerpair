@@ -10,8 +10,6 @@
 
     <title>{{ config('app.name', 'HackerPair') }}</title>
 
-    <script src="https://use.fontawesome.com/811fe8e43b.js"></script>
-
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
@@ -34,5 +32,6 @@
 
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}"></script>
+<script src="https://use.fontawesome.com/811fe8e43b.js"></script>
 </body>
 </html>

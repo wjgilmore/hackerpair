@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.full')
 
 @section('jumbotron')
     <div class="jumbotron">
@@ -11,32 +11,17 @@
 
 @section('content')
 
-    <div class="row">
+    <div class="row event-bar row-no-padding">
         <div class="col">
-
-            <div style="padding: 15px 0px 15px 0px;">
-                {!! link_to_route('welcome.index', 'Home') !!} &gt; Events
-            </div>
-
+            {!! link_to_route('welcome.index', 'Home') !!} &gt; Events
         </div>
     </div>
 
     <div class="row">
         <div class="col">
-
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title">Upcoming Events by Category</h4>
-                    <p class="card-text">
-
-                        @include('partials._categories_table', ['categories' => $categories])
-
-                    </p>
-                </div>
-            </div>
-
+            <h4>Upcoming Events by Category</h4>
+            @include('partials._categories_table', ['categories' => $categories])
         </div>
-
     </div>
 
 @endsection

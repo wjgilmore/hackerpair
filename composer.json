@@ -6,14 +6,14 @@
     "type": "project",
     "require": {
         "php": ">=7.0.0",
-        "anhskohbo/no-captcha": "^3.0",
         "cviebrock/eloquent-sluggable": "^4.3",
         "fideloper/proxy": "~3.3",
         "laracasts/flash": "^3.0",
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0",
         "laravelcollective/html": "^5.5",
-        "laravelnews/laravel-twbs4": "^1.1"
+        "laravelnews/laravel-twbs4": "^1.1",
+        "toin0u/geocoder-laravel": "^4.0"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.1",
@@ -54,6 +54,12 @@
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover"
+        ],
+        "post-update-cmd": [
+            "@php artisan cache:clear"
+        ],
+        "post-install-cmd": [
+            "@php artisan cache:clear"
         ]
     },
     "config": {

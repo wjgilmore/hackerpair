@@ -6,7 +6,8 @@ $factory->define(App\Event::class, function (Faker $faker) {
     return [
         'name'           => 'Laravel and Coffee',
         'published'      => 1,
-        'started_at'     => '2017-12-01 15:00:00',
+        'start_date'     => '2017-12-01',
+        'start_time'     => '15:00:00',
         'max_attendees'  => 3,
         'venue'          => 'City Coffee Shop',
         'city'           => 'Dublin',

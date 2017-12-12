@@ -5,6 +5,8 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+use Carbon\Carbon;
+
 class User extends Authenticatable
 {
     use Notifiable;
@@ -15,8 +17,9 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'first_name',
+        'bio',
         'email',
+        'first_name',
         'last_name',
         'timezone',
         'title',
@@ -42,6 +45,11 @@ class User extends Authenticatable
         return $this->first_name . ' ' . $this->last_name;
     }
 
+    public function getTimezoneAbbreviationAttribute()
+    {
+        return Carbon::now($this->timezone)->format('T');
+    }
+
     /**
      * Relationships
      *
@@ -56,16 +64,14 @@ class User extends Authenticatable
         return $this->belongsTo('App\State');
     }
 
-
     /**
      * A user can host multiple events
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function hostedEvents() {
-        return $this->hasMany('App\Event');
+        return $this->hasMany('App\Event')->withoutGlobalScopes();
     }
-
 
     /**
      * A user can favorite multiple events
@@ -77,8 +83,7 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Event', 'favorite_events');
     }
 
-    // ->as('attendedEvents')
-    public function tickets() {
+    public function attendedEvents() {
         return $this->belongsToMany('App\Event', 'tickets')
             ->withPivot('approved', 'approved_at')
             ->whereNull('tickets.deleted_at')
@@ -111,7 +116,7 @@ class User extends Authenticatable
 
     public function isAttending($event)
     {
-        return $this->tickets()->where('event_id', $event->id)->whereNull('tickets.deleted_at')->exists();
+        return $this->attendedEvents()->where('event_id', $event->id)->whereNull('tickets.deleted_at')->exists();
     }
 
 }

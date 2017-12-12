@@ -20,11 +20,13 @@ class LocationsController extends Controller
         $states = Event::select([DB::raw('count(id) as total'), 'state_id'])
             ->where('published', 1)
             ->orderBy('total', 'desc')
+            ->orderBy('name', 'asc')
             ->groupBy('state_id')->get();
 
         $cities = Event::select([DB::raw('count(id) as total'), 'city', 'state_id'])
             ->upcoming()
             ->orderBy('total', 'desc')
+            ->orderBy('city', 'asc')
             ->groupBy('city', 'state_id')
             ->get();
 

@@ -25,7 +25,7 @@
             </ul>
 
             <p>
-                Still can't find what you're looking for? {{ link_to_route('contact.index', 'Send us a message.') }}
+                Still can't find what you're looking for? {{ link_to_route('contact.create', 'Send us a message.') }}
             </p>
 
         </div>

@@ -37,9 +37,11 @@ class EventsTableSeeder extends Seeder
             Event::create([
                 'user_id'       => $user->id,
                 'category_id'   => $category->id,
-                'name'          => $faker->sentence(2),
+                'name'          => $faker->sentence(5),
+                'oneliner'      => $faker->sentence(5),
                 'published'     => rand(0,1),
-                'started_at'    => $faker->dateTimeBetween('now', '+10 days')->format('Y-m-d H:i:s'),
+                'start_date'    => $faker->dateTimeBetween('now', '+10 days')->format("Y-m-d H:i:s"),
+                'start_time'    => $faker->dateTimeBetween('now', '+10 days')->format("Y-m-d H:i:s"),
                 'max_attendees' => rand(2,5),
                 'venue'         => $faker->company,
                 'street'        => $faker->streetAddress,

@@ -4,7 +4,7 @@
     <div class="jumbotron">
         <div class="container">
             <h1>Contact HackerPair</h1>
-            <h2>Your message will soon be delivered to our clandestine team</h2>
+            <h2>Your message will be delivered to our clandestine team</h2>
         </div>
     </div>
 @endsection
@@ -73,7 +73,6 @@
             </div>
 
             <div class="form-group">
-                {!! app('captcha')->display(); !!}
             </div>
 
             {!! Form::submit('Submit', ['class' => 'btn btn-info']) !!}

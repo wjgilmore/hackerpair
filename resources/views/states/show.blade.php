@@ -6,23 +6,13 @@
             <h1 style="color: white; font-size: 4.0em; font-weight: 900; margin-top: 10px; margin-bottom: 2px;">{{ $state->name }} Event Locations</h1>
             <p style="font-size: 2em; margin-top: 3px; color: #D9A648; font-weight: 700;">
                 Popular categories in {{ $state->name }}:
-                @foreach($state->popularCategories() as $pc)
-                    {{ $pc->name }}
-                @endforeach
+                {{ $state->popularCategories()->implode('name', ', ') }}
             </p>
         </div>
     </div>
 @endsection
 
 @section('content')
-
-    <div class="row">
-        <div class="col-md-12">
-
-
-
-        </div>
-    </div>
 
     <div class="row">
         <div class="col-md-12">

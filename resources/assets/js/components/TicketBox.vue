@@ -1,5 +1,5 @@
 <template>
-    <div class="col-md-3 event-ticket-box">
+    <div class="event-ticket-box">
 
         <div  style="text-align: center;">
             <p>
@@ -14,6 +14,10 @@
         <ul class="fa-ul">
             <li>
                 <i class="fa-li fa fa-check-square"></i>
+                {{ attendeeCurrentCount }} / {{ this.attendeeMax}} attendees
+            </li>
+            <li>
+                <i class="fa-li fa fa-check-square"></i>
                 {{ firstNotification }}
             </li>
             <li>
@@ -26,7 +30,7 @@
 </template>
 <style>
     .going {
-        background-color: #2ca02c;
+        background-color: #FFBA07;
     }
 
     .not-going {
@@ -34,14 +38,15 @@
     }
 </style>
 <script>
-    export default{
+    export default {
         name: 'ticketbox',
-        props: ['eventId', 'userId', 'attending-event'],
-        data(){
-            return{
+        props: ['eventId', 'userId', 'attendingEvent', 'attendeeMax', 'attendeeCount'],
+        data() {
+            return {
                 attendanceFlag: false,
                 firstNotification: "",
-                secondNotification: ""
+                secondNotification: "",
+                attendeeCurrentCount: this.attendeeCount
             }
         },
         created: function() {
@@ -88,6 +93,7 @@
                     this.firstNotification = "You're attending this event"
                     this.secondNotification = "You'll receive an e-mail once the organizer has approved your request"
                     this.attendanceFlag = true
+                    this.attendeeCurrentCount = parseInt(this.attendeeCurrentCount) + 1;
                     //document.getElementById(this.userId + '-avatar').style.visibility="visible"
                     this.$notify(attending)
                 })
@@ -109,6 +115,7 @@
                     this.firstNotification = "You're no longer signed up to attend this event"
                     this.secondNotification = "If this was a mistake, just click the Going button again"
                     this.attendanceFlag = false
+                    this.attendeeCurrentCount = parseInt(this.attendeeCurrentCount) - 1;
                     //document.getElementById(this.userId + '-avatar').style.visibility="hidden"
                     this.$notify(notAttending)
                 })

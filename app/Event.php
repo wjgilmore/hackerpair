@@ -18,17 +18,22 @@ class Event extends Model
 
     protected $dates = [
         'created_at',
-        'started_at',
+        'start_date',
         'updated_at'
     ];
 
     protected $fillable = [
+        'category_id',
         'city',
         'description',
+        'max_attendees',
         'name',
+        'oneliner',
+        'published',
         'slug',
         'state_id',
-        'started_at',
+        'start_date',
+        'start_time',
         'street',
         'venue',
         'zip'
@@ -43,6 +48,10 @@ class Event extends Model
            $builder->where('published', '=', 1);
         });
 
+        static::addGlobalScope('upcoming', function (Builder $builder) {
+            $builder->where('start_date', '>=', Carbon::now()->toDateString());
+        });
+
     }
 
     /**
@@ -50,28 +59,51 @@ class Event extends Model
      *
      */
 
+    /**
+     * Which users have expressed interest in attending this event?
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
     public function attendees()
     {
         return $this->belongsToMany('App\User', 'tickets')
             ->using('App\Ticket')
-            ->withPivot('approved', 'approved_at')
-            ->whereNull('tickets.deleted_at')
-            ->withTimestamps();
+            ->whereNull('tickets.deleted_at');
     }
 
+    /**
+     * To what category does this event belong?
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function category() {
         return $this->belongsTo('App\Category');
     }
 
+    /**
+     * Which users have favorited this event?
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
     public function favoritedBy()
     {
         return $this->belongsToMany('App\User', 'favorite_events');
     }
 
+    /**
+     * Which user is organizing this event?
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function organizer() {
         return $this->belongsTo('App\User', 'user_id');
     }
 
+    /**
+     * In which state will this event be hosted?
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function state() {
         return $this->belongsTo('App\State');
     }
@@ -107,24 +139,30 @@ class Event extends Model
 
     }
 
-    public function setStartedAtAttribute($value)
+    public function getAddressAttribute()
     {
-        if (! is_null($value)) {
-            $timezone = Auth::check() ? Auth::user()->timezone : config('app.timezone');
-            $this->attributes['started_at'] = Carbon::createFromFormat('Y-m-d H:i:s', $value, $timezone)->timezone(config('app.timezone'));
-        }
+        return $this->street . ' ' .
+            $this->city . ', ' .
+            $this->state->abbreviation . ' ' .
+            $this->zip;
     }
 
-    public function getStartedAtAttribute($value)
+    public function getStartDateAttribute($value)
+    {
+        $timezone = Auth::check() ? Auth::user()->timezone : config('app.timezone');
+        return Carbon::createFromFormat('Y-m-d', $value, $timezone)
+                    ->timezone(config('app.timezone'))->format("Y-m-d");
+    }
+
+    public function getStartTimeAttribute($value)
     {
 
         $timezone = Auth::check() ? Auth::user()->timezone : config('app.timezone');
 
-        return Carbon::createFromTimestamp(strtotime($value))->timezone($timezone);
+        return Carbon::createFromFormat('H:i:s', $value, $timezone)
+                ->timezone(config('app.timezone'))->format("H:ia");
 
     }
-
-
 
     /**
      * Instance Methods
@@ -170,7 +208,7 @@ class Event extends Model
 
     public function occurringToday()
     {
-        return $this->started_at->isToday();
+        return $this->start_date->isToday();
     }
 
     /**
@@ -230,17 +268,17 @@ class Event extends Model
      * Retrieve events occurring in the future and which are public (published)
      *
      * @param $query
-     * @param $startTime
+     * @param $startDate
      *
      * @return mixed
      */
-    public function scopeUpcoming($query, $startTime=NULL)
+    public function scopeUpcoming($query, $startDate=NULL)
     {
 
         $query->where('published', true);
 
-        if (! is_null($startTime)) {
-            $query->whereDate('started_at', '>=', $startTime);
+        if (! is_null($startDate)) {
+            $query->whereDate('start_date', '>=', $startDate);
         }
 
     }

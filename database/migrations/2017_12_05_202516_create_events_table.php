@@ -25,8 +25,10 @@ class CreateEventsTable extends Migration
             $table->string('name');
             $table->index('name');
             $table->string('slug');
+            $table->string('oneliner');
             $table->boolean('published')->default(false);
-            $table->datetime('started_at')->nullable();
+            $table->date('start_date')->nullable();
+            $table->time('start_time')->nullable();
             $table->integer('max_attendees')->default(0);
             $table->string('venue');
             $table->string('street')->nullable();

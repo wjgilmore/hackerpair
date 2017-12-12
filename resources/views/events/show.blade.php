@@ -3,58 +3,26 @@
 @section('jumbotron')
     <div class="jumbotron">
         <div class="container">
-            <div class="row">
-            <div class="col-md-1 col-lg-1 event-header-date" style="line-height: 1.1; margin-top: 15px;">
-                <span style="text-transform: uppercase; letter-spacing: 14px;">{{ $event->started_at->format('M') }}</span>
-                <span style="font-size: 3.5em;">{{ $event->started_at->format('d') }}</span>
-                <span style="letter-spacing: 0.8px; font-size: 1.7em;">{{ $event->started_at->format('Y') }}</span>
-                <span style="letter-spacing: 0.4px; font-size: 1em;">{{ $event->started_at->format('H:ia') }}</span>
-            </div>
-            <div class="col-md-8 col-lg-8 col-sm-12">
-                <h1>
-                    {{ $event->name }}
-                </h1>
-                <p style="color: white;">
+            <h1>{{ $event->name }}</h1>
+            <h2>{{ $event->oneliner }}</h2>
+            <p style="color: white;">
 
-                    <span class="badge badge-primary {{ strtolower($event->category->slug) }}">{{ $event->category->name }}</span>
+                <span class="badge badge-primary {{ strtolower($event->category->slug) }}">{{ $event->category->name }}</span>
 
-                    <span class="badge badge-primary">
-                            <span class="glyphicon glyphicon-time"
-                                  aria-hidden="true"></span> Posted {{ $event->created_at->diffForHumans() }}
-                    </span>
+                <span class="badge badge-primary">
+                        <span class="fa fa-clock-o"
+                              aria-hidden="true"></span> Posted {{ $event->created_at->diffForHumans() }}
+                </span>
 
-                </p>
-            </div>
-
-            @if (Auth::check() and ! Auth::user()->isOrganizer($event))
-                <ticket-box
-                        event-id="{{ $event->id }}"
-                        user-id="{{ Auth::user()->id }}"
-                        attending-event="{{ Auth::check() and Auth::user()->isAttending($event) ? true : false }}">
-                </ticket-box>
-            @elseif (Auth::check() and Auth::user()->isOrganizer($event))
-
-                <div class="col col-md-3 col-lg-3 col-sm-12 event-ticket-box">
-                    <p style="text-align: center;">This is your event. </p>
-                </div>
-
-            @else
-
-                <div class="col col-md-3 col-lg-3 col-sm-12 event-ticket-box">
-                    <p style="text-align: center;">Login to join this event!</p>
-                </div>
-
-            @endif
-
-            </div>
+            </p>
         </div>
     </div>
 @endsection
 
 @section('content')
 
-    <div class="row event-bar">
-        <div class="col-md-8 hidden-sm hidden-xs" style="padding-left: 0px;">
+    <div class="row event-bar row-no-padding">
+        <div class="col-md-8 hidden-sm hidden-xs text-muted">
             {!! link_to_route('events.index', 'Events') !!}
             / {!! link_to_route('states.show', $event->state->name, ['id' => $event->state->abbreviation]) !!}
             / {{ $event->city }}
@@ -73,67 +41,70 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row row-no-padding">
 
         <div class="col-md-9">
 
-            @if (Auth::check() and Auth::user()->isOrganizer($event) and ! $event->isPublished())
-
-                <div class="col-md-12" style="padding-bottom: 5px; border: 3px solid black;">
-                    <h4>This Event is Not Yet Visible</h4>
-                    <p>
-                        You have not yet enabled this event for public viewing. If this page is
-                        satisfactory, enable the event by pressing the "Enable Event" button. If you'd like
-                        to make changes to the event details, press the "Edit Event" button. If you'd like
-                        to delete the event, press the "Delete Event" button.
-                    </p>
-                    <p>
-                        {!! Form::model($event, [
-                            'route'  => ['events.enable', $event->id],
-                            'class'  => 'form',
-                            'method' => 'post',
-                            'style'  => 'display: inline-block'
-                            ]
-                        ) !!}
-                        {!! Form::submit('Enable Event', ['class' => 'btn btn-info']) !!}
-                        {!! Form::close() !!}
-
-                        {{ link_to_route('events.edit', 'Edit Event', ['id' => $event->id], ['class' => 'btn btn-info']) }}
-
-                        {!! Form::model($event, [
-                            'route'   => [ 'events.destroy', $event->id ],
-                            'class'   => 'form',
-                            'method'  => 'DELETE',
-                            'style'   => 'display: inline-block'
-                            ]
-                        ) !!}
-                        {!! Form::submit('Delete Event', ['type' => 'submit', 'class' => 'btn btn-warning']) !!}
-                        {!! Form::close() !!}
-
-                    </p>
-                </div>
-
-            @endif
-
-            <h4>Description</h4>
-
-            {!! nl2br(e($event->description)) !!}
+            {!! preg_replace('/\R+/', '<br /><br />', e($event->description)) !!}
 
             <h4>About Organizer {{ $event->organizer->first_name }} {{ $event->organizer->last_name }}</h4>
-            <div>
-                <p class="pull-right">
-                    {{ $event->organizer->bio }}
-                </p>
-            </div>
 
-            <h4>
-                Who else is going?
-            </h4>
-            <h6 class="text-muted">{{ $event->attendees->count() }} of {{ $event->max_attendees }} spots filled</h6>
+            <p>
+                @if (is_null($event->organizer->bio))
+                    The organizer has not added a bio.
+                @else
+                    {{ $event->organizer->bio }}
+                @endif
+            </p>
+
+            <h4>Nearby Events</h4>
+            @forelse (App\Event::upcoming()->where('id', '!=', $event->id)->nearby($event->lat, $event->lng, 500)->get()->take(5) as $nearbyEvent)
+                <p>
+                <b>{!! link_to_route('events.show', $nearbyEvent->name, ['id' => $nearbyEvent]) !!}</b> ({{ round($nearbyEvent->distance, 2) }} miles)<br />
+                {{ $nearbyEvent->oneliner }}
+
+                </p>
+            @empty
+                <p>
+                    No nearby events found!
+                </p>
+            @endforelse
 
         </div>
 
         <div class="col-md-3">
+
+            <div class="card">
+                <div class="card-body">
+
+                    @if (Auth::check() and ! Auth::user()->isOrganizer($event))
+                        <ticket-box
+                                event-id="{{ $event->id }}"
+                                user-id="{{ Auth::user()->id }}"
+                                attendee-max="{{ $event->max_attendees }}"
+                                attendee-count="{{ $event->attendees->count() }}"
+                                attending-event="{{ Auth::check() and Auth::user()->isAttending($event) ? true : false }}">
+                        </ticket-box>
+                    @elseif (Auth::check() and Auth::user()->isOrganizer($event))
+
+                        <div class="event-ticket-box">
+                            <p style="text-align: center;">
+                                This is your event.<br />
+                                {!! link_to_route('events.edit', 'Edit Event Details', ['event' => $event]) !!}
+                            </p>
+                        </div>
+
+                    @else
+
+                        <div class="event-ticket-box">
+                            <p style="text-align: center;">Login to join this event!</p>
+                        </div>
+
+                    @endif
+                </div>
+            </div>
+
+            <br />
 
             <div class="card">
                 <div class="card-body">
@@ -169,28 +140,9 @@
                                 {{ $event->city }}, {{ $event->state->abbreviation }} {{ $event->zip }}</li>
                             <li class="list-group-item" style="border: none;">
                                 <span class="fa fa-calendar" style="color: #FFC200; padding-right: 5px;" aria-hidden></span>
-                                {{ $event->started_at->format('M d, Y H:ia') }}
+                                {{ $event->start_date }}
                             </li>
                         </ul>
-                    </div>
-                </div>
-            </div>
-
-            <br />
-
-            <div class="card">
-                <div class="card-body">
-                    <div class="card-title">
-                        <h4>Nearby Events</h4>
-                        <p>
-                            @forelse (App\Event::upcoming()->where('id', '!=', $event->id)->nearby($event->lat, $event->lng, 500)->get()->take(5) as $nearbyEvent)
-                                {!! link_to_route('events.show', $nearbyEvent->name, ['id' => $nearbyEvent->id]) !!}<br/>
-                        @empty
-                            <p>
-                                No nearby events found!
-                            </p>
-                            @endforelse
-                            </p>
                     </div>
                 </div>
             </div>

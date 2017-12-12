@@ -23,8 +23,10 @@ class EventsController extends Controller
     public function index()
     {
 
-        //$events = Event::paginate(10);
-        $events = Event::withoutGlobalScopes()->paginate(10);
+        $events = Event::with(['category', 'organizer', 'state'])
+            ->orderBy('start_date', 'desc')
+            ->paginate();
+
         return view('events.index')->with('events', $events);
 
     }
@@ -54,6 +56,22 @@ class EventsController extends Controller
             $request->input()
         );
 
+        if ($request->has('published'))
+        {
+            $event->published = 1;
+            $event->save();
+        }
+
+        // I am only geocoding the zip code because the generated events
+        // in the EventsTableSeeder contain contrived city names which
+        // will cause the geocoder to return zero results.
+        $coords = app('geocoder')->geocode($event->zip)->get();
+        $event->lat = $coords->first()->getCoordinates()->getLatitude();
+        $event->lng = $coords->first()->getCoordinates()->getLongitude();
+        $event->save();
+
+        $request->user()->hostedEvents()->save($event);
+
         flash('Event created!')->success();
         return redirect()->route('events.show', ['event' => $event]);
 
@@ -67,9 +85,7 @@ class EventsController extends Controller
      */
     public function show(Event $event)
     {
-
         return view('events.show')->with('event', $event);
-
     }
 
     /**
@@ -96,6 +112,14 @@ class EventsController extends Controller
         $event->update(
             $request->input()
         );
+
+        // I am only geocoding the zip code because the generated events
+        // in the EventsTableSeeder contain contrived city names which
+        // will cause the geocoder to return zero results.
+        $coords = app('geocoder')->geocode($event->zip)->get();
+        $event->lat = $coords->first()->getCoordinates()->getLatitude();
+        $event->lng = $coords->first()->getCoordinates()->getLongitude();
+        $event->save();
 
         flash('Event updated!')->success();
 

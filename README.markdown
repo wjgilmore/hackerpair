@@ -95,6 +95,8 @@ the zip codes table.
 
 ## TODO
 
+HackerPair is not yet "feature complete" so please don't complain about the project not yet including more advanced Laravel examples. I'll be adding those in the weeks to come.
+
 The new edition of Easy Laravel 5 is in beta format, as is the HackerPair
 companion project. Notably certain key features don't yet exist because
 I haven't yet written the associated chapters. :-) For instance, there is

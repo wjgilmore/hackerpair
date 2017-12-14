@@ -17,12 +17,12 @@
 
             {!! Form::model($event,
                 [
-                'route' => ['events.update', $event],
+                'route' => ['users.hosted-events.update', Auth::user(), $event],
                 'method' => 'put'
                 ],
                 ['class' => 'form']) !!}
 
-            @include('events._form')
+            @include('events.hosted._form')
 
             <div class="form-group">
                 {!! Form::submit('Edit Event', ['class' => 'btn btn-info btn-lg', 'style' => 'width: 100%']) !!}

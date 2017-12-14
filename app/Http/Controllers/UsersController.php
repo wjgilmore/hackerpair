@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Http\Requests\AccountUpdateRequest;
+use App\Http\Requests\UserUpdateRequest;
 use App\User;
 
-class AccountsController extends Controller
+class UsersController extends Controller
 {
 
     public function __construct()
@@ -17,16 +17,16 @@ class AccountsController extends Controller
 
     public function index()
     {
-        return view('accounts.index');
+        return view('users.index');
     }
 
     public function edit(User $user)
     {
         $this->authorize('edit', $user);
-        return view('accounts.edit')->with('user', $user);
+        return view('users.edit')->with('user', $user);
     }
 
-    public function update(AccountUpdateRequest $request, User $user)
+    public function update(UserUpdateRequest $request, User $user)
     {
 
         $user->update(
@@ -35,7 +35,7 @@ class AccountsController extends Controller
 
         flash('Your account profile has been updated')->success();
 
-        return redirect()->route('accounts.edit', ['account' => $user->id]);
+        return redirect()->route('users.edit', ['user' => $user]);
 
     }
 

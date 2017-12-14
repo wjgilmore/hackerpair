@@ -22,7 +22,7 @@ class Time
         while($beginning->lt($end))
         {
 
-            $intervals[$beginning->format('H:i')] = $beginning->format('h:iA');
+            $intervals[$beginning->format('H:ia')] = $beginning->format('h:ia');
 
             $beginning->addMinutes(30);
 

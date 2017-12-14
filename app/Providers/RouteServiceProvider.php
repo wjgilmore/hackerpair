@@ -25,7 +25,10 @@ class RouteServiceProvider extends ServiceProvider
     {
         parent::boot();
 
-        Route::model('account', \App\User::class);
+        Route::model('hosted-event', \App\Event::class);
+        Route::bind('any_hosted_event', function($slug) {
+            return \App\Event::withoutGlobalScopes()->where('slug', $slug)->first();
+        });
 
     }
 

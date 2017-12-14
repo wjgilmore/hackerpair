@@ -5,16 +5,17 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
 
+use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 
 use Cviebrock\EloquentSluggable\Sluggable;
-
-use Illuminate\Support\Facades\Auth;
+use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
 
 class Event extends Model
 {
 
-    use Sluggable;
+    use Sluggable,
+        SluggableScopeHelpers;
 
     protected $dates = [
         'created_at',

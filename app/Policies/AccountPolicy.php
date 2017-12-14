@@ -11,6 +11,8 @@ class AccountPolicy
 
     public function edit(User $user, User $model)
     {
+        // Allow the request if the authenticated user ID matches the
+        // ID of the user being edited.
         return $user->id === $model->id;
     }
 

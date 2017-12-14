@@ -83,7 +83,7 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Event', 'favorite_events');
     }
 
-    public function attendedEvents() {
+    public function upcomingEvents() {
         return $this->belongsToMany('App\Event', 'tickets')
             ->withPivot('approved', 'approved_at')
             ->whereNull('tickets.deleted_at')
@@ -116,7 +116,7 @@ class User extends Authenticatable
 
     public function isAttending($event)
     {
-        return $this->attendedEvents()->where('event_id', $event->id)->whereNull('tickets.deleted_at')->exists();
+        return $this->upcomingEvents()->where('event_id', $event->id)->whereNull('tickets.deleted_at')->exists();
     }
 
 }

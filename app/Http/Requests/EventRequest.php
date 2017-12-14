@@ -6,7 +6,7 @@ use Illuminate\Foundation\Http\FormRequest;
 
 use Auth;
 
-class EventStoreRequest extends FormRequest
+class EventRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.

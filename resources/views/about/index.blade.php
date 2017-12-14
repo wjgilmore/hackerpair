@@ -17,7 +17,8 @@
             <div class="card" style="border: none;">
                 <div class="card-body">
                     <p class="card-text">
-                        <i class="fa fa-github" aria-hidden="true"></i> HackerPair Source Code
+                        <i class="fa fa-github" aria-hidden="true"></i>
+                        <a href="http://github.com/wjgilmore/hackerpair">HackerPair Source Code</a>
                     </p>
                 </div>
             </div>

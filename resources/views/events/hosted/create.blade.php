@@ -15,9 +15,9 @@
 
         <div class="col">
 
-            {!! Form::open(['route' => 'events.store'], ['class' => 'form']) !!}
+            {!! Form::open(['route' => ['users.hosted-events.store', Auth::user()]], ['class' => 'form']) !!}
 
-            @include('events._form')
+            @include('events.hosted._form')
 
             <div class="form-group">
                 {!! Form::submit('Add Event', ['class' => 'btn btn-info btn-lg', 'style' => 'width: 100%']) !!}

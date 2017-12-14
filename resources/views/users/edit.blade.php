@@ -16,7 +16,7 @@
         <div class="col-md-12">
 
             {!! Form::model($user, [
-                'route'  => ['accounts.update', $user->id],
+                'route'  => ['users.update', $user->id],
                 'class'  => 'form',
                 'method' => 'put'
                 ]

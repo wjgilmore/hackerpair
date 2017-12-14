@@ -10,13 +10,15 @@ Route::view('about/book', 'about.book')->name('about.book');
 Route::get('contact', 'ContactController@create')->name('contact.create');
 Route::post('contact', 'ContactController@store')->name('contact.store');
 
-Route::resource('accounts', 'AccountsController');
+Route::resource('users', 'UsersController');
 Route::resource('approvals', 'ApprovalsController');
 Route::resource('categories', 'CategoriesController');
 Route::resource('events', 'EventsController');
 Route::resource('favorites', 'FavoritesController');
-Route::resource('users.events', 'UserHostedEventsController');
-Route::resource('users.attended-events', 'UserAttendedEventsController');
+Route::get('users/{user}/hosted-events/{any_hosted_event}/edit', 'UserHostedEventsController@edit');
+Route::put('users/{user}/hosted-events/{any_hosted_event}', 'UserHostedEventsController@update');
+Route::resource('users.hosted-events', 'UserHostedEventsController');
+Route::resource('users.upcoming', 'UserUpcomingEventsController');
 Route::resource('locations', 'LocationsController');
 Route::resource('maps', 'MapsController');
 Route::resource('search', 'SearchController');

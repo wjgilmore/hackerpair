@@ -2,7 +2,7 @@
 
     <p class="d-none d-md-block">
         @auth
-            Event times are presented using the {{ Auth::user()->timezone_abbreviation }} time zone. ({!! link_to_route('accounts.edit', 'Update Time Zone', ['id' => Auth::user()->id]) !!})
+            Event times are presented using the {{ Auth::user()->timezone_abbreviation }} time zone. ({!! link_to_route('users.edit', 'Update Time Zone', ['id' => Auth::user()->id]) !!})
         @else
             Event times are presented using Eastern Time Zone unless you're logged in and have defined your time zone!
         @endauth
@@ -52,7 +52,7 @@
                     </td>
                 <td>
                     @if(Auth::user()->id == $event->organizer->id)
-                        organizer
+                        {!! link_to_route('users.hosted-events.edit', 'Edit Event', ['user' => Auth::user(), 'event' => $event]) !!}
                     @endif
                 </td>
                 @endauth

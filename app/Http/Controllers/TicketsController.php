@@ -30,7 +30,7 @@ class TicketsController extends Controller
     public function store(Request $request)
     {
 
-        \Auth::user()->tickets()->syncWithoutDetaching([$request->get('id') => ['deleted_at' => NULL]]);
+        \Auth::user()->upcomingEvents()->syncWithoutDetaching([$request->get('id') => ['deleted_at' => NULL]]);
 
         return response()->json(['error' => 'none'], 200);
 
@@ -45,7 +45,7 @@ class TicketsController extends Controller
     public function destroy($id)
     {
 
-        \Auth::user()->tickets()->syncWithoutDetaching([$id => ['deleted_at' => DB::raw('NOW()')]]);
+        \Auth::user()->upcomingEvents()->syncWithoutDetaching([$id => ['deleted_at' => DB::raw('NOW()')]]);
 
         return response()->json(['error' => 'none'], 200);
 

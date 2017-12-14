@@ -73,7 +73,7 @@
                 if (flag == "1") {
                     this.attendanceFlag = true
                     this.firstNotification = "You're attending this event."
-                    this.getApprovalStatus()
+                    this.secondNotification = "Changed your mind? Press the Not Going button"
                 } else {
                     this.attendanceFlag = false
                     this.firstNotification = "You're not signed up to attend this event"

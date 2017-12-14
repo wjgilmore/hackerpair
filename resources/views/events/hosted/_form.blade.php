@@ -18,7 +18,7 @@
 
 <div class="form-group">
     {!! Form::label('start_date', "Starting Date", ['class' => 'control-label']) !!}
-    <date-picker placeholder="Select an event date" defaultvalue="{{old('start_date')}}" name="start_date"></date-picker>
+    <date-picker placeholder="Select an event date" defaultvalue="{{isset($event) ? $event->start_date : old('start_date')}}" name="start_date"></date-picker>
 </div>
 
 <div class="form-group">
@@ -60,5 +60,5 @@
 
 <div class="form-group">
     {!! Form::label('published', "Publish this event immediately?", ['class' => 'control-label']) !!}
-    {!! Form::checkbox('published', null, ['class' => 'form-control input-lg'] ) !!}
+    {!! Form::checkbox('published', isset($event) and $event->published == 1 ? true : old('published'), ['class' => 'form-control input-lg'] ) !!}
 </div>

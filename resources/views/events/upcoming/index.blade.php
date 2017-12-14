@@ -5,7 +5,7 @@
         <div class="container">
             <div>
                 <h1>Build Faster with HackerPair</h1>
-                <h2 class="d-none d-md-block">Attended Events</h2>
+                <h2 class="d-none d-md-block">Your Upcoming Events</h2>
             </div>
         </div>
     </div>

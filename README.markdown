@@ -52,7 +52,9 @@ haven't already done so. You'll also need to create the database and
 associated settings, using these values to populate the above settings
 in your `.env` file.
 
-### Step #3. Run the Migrations
+### Step #3. 
+
+### Step #4. Run the Migrations
 
 With the database credentials in place, it's time to build the database
 schema. To do so you'll use Laravel Artisan's `migrate` command:
@@ -64,7 +66,7 @@ and you'll see quite a few tables have been created. Next we'll populate
 several of these tables with seed data which will allow you to interact
 with the application in an environment approximating reality.
 
-### Step #4. Run the Zip Code Transmogrifier
+### Step #5. Run the Zip Code Transmogrifier
 
 A major goal behind the HackerPair project was to demonstrate how to
 present highly localized data. In order to present the seed data in the
@@ -84,7 +86,7 @@ Once the command is completed, you'll find a new file inside `database/seeds/dat
 named `hackerpair_zips.csv`. This file is used within the seeders to
 generate location data.
 
-### Step #5. Run the Seeder
+### Step #6. Run the Seeder
 
 Finally, run the Artisan seeder to populate the database with seed data:
 
@@ -93,7 +95,7 @@ Finally, run the Artisan seeder to populate the database with seed data:
 The seeder requires a few minutes to run due to the time required to seed
 the zip codes table.
 
-## TODO
+## Upcoming Features
 
 HackerPair is not yet "feature complete" so please don't complain about the project not yet including more advanced Laravel examples. I'll be adding those in the weeks to come.
 

@@ -23,6 +23,11 @@
                 <a href="http://www.easylaravelbook.com<">EasyLaravelBook.com</a>.
             </p>
 
+            <p>
+                <i class="fa fa-github" aria-hidden="true"></i>
+                <a href="http://github.com/wjgilmore/hackerpair">HackerPair Source Code</a>
+            </p>
+
         </div>
 
         <div class="col-9">

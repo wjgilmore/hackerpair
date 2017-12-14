@@ -12,11 +12,7 @@
         <div class="col-md-6 offset-md-3 my-auto" style="padding-top: 25px">
 
             <div style="text-align: center; padding-bottom: 10px;">
-                <a href="/auth/twitter" class="btn btn-lg btn-info btn-block" style="background-color: #1A97F0">
-                    <span class="fa fa-twitter"></span> Login with Twitter
-                </a>
-                <br />
-                <a href="/auth/github" class="btn btn-lg btn-info btn-block" style="background-color: #000000">
+                <a href="/auth/github" class="btn btn-lg btn-info btn-block" style="background-color: #000000; border: 1px solid white;">
                     <span class="fa fa-github"></span> Login with GitHub
                 </a>
                 <br />

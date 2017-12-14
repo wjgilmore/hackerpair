@@ -102,7 +102,7 @@ class UserHostedEventsController extends Controller
 
         flash('Event updated!')->success();
 
-        return redirect()->route('users.hosted-events.edit', [$user, $event]);
+        return redirect()->route('users.hosted.edit', [$user, $event]);
 
     }
 

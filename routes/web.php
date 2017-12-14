@@ -1,6 +1,8 @@
 <?php
 
 Auth::routes();
+Route::get('auth/github', 'Auth\SocialGitHubController@redirectToProvider');
+Route::get('auth/github/callback', 'Auth\SocialGitHubController@handleProviderCallback');
 
 Route::get('/', 'WelcomeController@index')->name('welcome.index');
 
@@ -15,9 +17,9 @@ Route::resource('approvals', 'ApprovalsController');
 Route::resource('categories', 'CategoriesController');
 Route::resource('events', 'EventsController');
 Route::resource('favorites', 'FavoritesController');
-Route::get('users/{user}/hosted-events/{any_hosted_event}/edit', 'UserHostedEventsController@edit');
-Route::put('users/{user}/hosted-events/{any_hosted_event}', 'UserHostedEventsController@update');
-Route::resource('users.hosted-events', 'UserHostedEventsController');
+Route::get('users/{user}/hosted/{any_hosted_event}/edit', 'UserHostedEventsController@edit');
+Route::put('users/{user}/hosted/{any_hosted_event}', 'UserHostedEventsController@update');
+Route::resource('users.hosted', 'UserHostedEventsController');
 Route::resource('users.upcoming', 'UserUpcomingEventsController');
 Route::resource('locations', 'LocationsController');
 Route::resource('maps', 'MapsController');

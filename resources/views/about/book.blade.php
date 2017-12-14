@@ -15,7 +15,7 @@
         <div class="col-3">
 
             <a href="http://www.easylaravelbook.com">
-            <img src="{{ asset('img/book-large-web.jpg') }}" class="img-fluid" />
+            <img src="{{ asset('img/book-large-web.jpg') }}" class="img-fluid book" />
             </a>
 
             <p>

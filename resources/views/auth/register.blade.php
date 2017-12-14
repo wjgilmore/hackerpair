@@ -9,13 +9,10 @@
             <h1>Create a HackerPair Account</h1>
 
             <p>
-                Create a HackerPair account by authenticating your identity using Twitter or Github. Alternatively,
+                Create a HackerPair account by authenticating your identity using Github. Alternatively,
                 you can use the below form to create a new account.
             </p>
 
-            <a href="/auth/twitter" class="btn btn-lg btn-info" style="margin-right: 25px; background-color: #1A97F0">
-                <span class="fa fa-twitter"></span> Login with Twitter
-            </a>
             <a href="/auth/github" class="btn btn-lg btn-info" style="background-color: #000000">
                 <span class="fa fa-github"></span> Login with GitHub
             </a>

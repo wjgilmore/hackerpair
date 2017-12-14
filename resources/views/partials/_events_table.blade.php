@@ -52,7 +52,7 @@
                     </td>
                 <td>
                     @if(Auth::user()->id == $event->organizer->id)
-                        {!! link_to_route('users.hosted-events.edit', 'Edit Event', ['user' => Auth::user(), 'event' => $event]) !!}
+                        {!! link_to_route('users.hosted.edit', 'Edit Event', ['user' => Auth::user(), 'event' => $event]) !!}
                     @endif
                 </td>
                 @endauth

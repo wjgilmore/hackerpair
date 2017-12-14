@@ -15,7 +15,7 @@
 
         <div class="col">
 
-            {!! Form::open(['route' => ['users.hosted-events.store', Auth::user()]], ['class' => 'form']) !!}
+            {!! Form::open(['route' => ['users.hosted.store', Auth::user()]], ['class' => 'form']) !!}
 
             @include('events.hosted._form')
 

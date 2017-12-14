@@ -44,7 +44,7 @@
                             <li>{{ link_to_route('users.edit', 'Account Profile', ['id' => Auth::user()->id], ['class' => 'dropdown-item']) }}</li>
                             <li>{{ link_to_route('favorites.index', 'Favorited Events', [], ['class' => 'dropdown-item']) }}</li>
                             <li>{{ link_to_route('users.upcoming.index', 'Upcoming Events', ['user' => Auth::user()->id], ['class' => 'dropdown-item']) }}</li>
-                            <li>{{ link_to_route('users.hosted-events.index', 'Hosted Events', ['user' => Auth::user()->id], ['class' => 'dropdown-item']) }}</li>
+                            <li>{{ link_to_route('users.hosted.index', 'Hosted Events', ['user' => Auth::user()->id], ['class' => 'dropdown-item']) }}</li>
                             <li>
                                 <a href="{{ route('logout') }}"
                                    class="dropdown-item"
@@ -60,7 +60,7 @@
                         </ul>
                     </li>
 
-                    <li class="nav-item">{!! link_to_route('users.hosted-events.create', 'Post Event', ['user' => Auth::user()], ['class' => 'nav-link']) !!}</li>
+                    <li class="nav-item">{!! link_to_route('users.hosted.create', 'Post Event', ['user' => Auth::user()], ['class' => 'nav-link']) !!}</li>
                 @else
                     <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">Login</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">Register</a></li>

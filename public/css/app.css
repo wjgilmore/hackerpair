@@ -9808,6 +9808,10 @@ span.navbar-toggler-icon {
   color: red;
 }
 
+.book {
+  border: 1px solid black;
+}
+
 .card {
   border-radius: 0px;
 }

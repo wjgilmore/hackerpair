@@ -17,7 +17,7 @@
 
             {!! Form::model($event,
                 [
-                'route' => ['users.hosted-events.update', Auth::user(), $event],
+                'route' => ['users.hosted.update', Auth::user(), $event],
                 'method' => 'put'
                 ],
                 ['class' => 'form']) !!}

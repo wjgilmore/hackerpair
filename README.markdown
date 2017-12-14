@@ -2,7 +2,9 @@
 
 [HackerPair](http://hackerpair.com) is the companion project to the
 bestselling book, [Easy Laravel 5](http://easylaravelbook.com),
-authored by [W. Jason Gilmore](http://www.wjgilmore.com).
+authored by [W. Jason Gilmore](http://www.wjgilmore.com). The new edition of Easy Laravel 5 is currently available in beta version at a discounted price.
+
+![Easy Laravel 5](https://raw.githubusercontent.com/wjgilmore/hackerpair/master/public/img/book-small-web.png)
 
 ## Installation
 
@@ -52,7 +54,9 @@ haven't already done so. You'll also need to create the database and
 associated settings, using these values to populate the above settings
 in your `.env` file.
 
-### Step #3. 
+### Step #3. Update the Vue Configuration File
+
+Inside `resources/assets/js` you'll find a file named `config.js.example`. This file contains a lone configuration variable named `GOOGLE_MAPS_API_KEY`. Rename it to `config.js` and assign this variable your Google Maps API key. This key is responsible for authentication when using Google's geocoder and map display APIs.
 
 ### Step #4. Run the Migrations
 

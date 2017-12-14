@@ -4,7 +4,7 @@
 bestselling book, [Easy Laravel 5](http://easylaravelbook.com),
 authored by [W. Jason Gilmore](http://www.wjgilmore.com). The new edition of Easy Laravel 5 is currently available in beta version at a discounted price.
 
-![Easy Laravel 5](https://raw.githubusercontent.com/wjgilmore/hackerpair/master/public/img/book-small-web.png)
+![Easy Laravel 5](https://raw.githubusercontent.com/wjgilmore/hackerpair/tree/master/public/img/book-small-web.png)
 
 ## Installation
 

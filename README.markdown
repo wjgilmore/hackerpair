@@ -70,34 +70,15 @@ and you'll see quite a few tables have been created. Next we'll populate
 several of these tables with seed data which will allow you to interact
 with the application in an environment approximating reality.
 
-### Step #5. Run the Zip Code Transmogrifier
-
-A major goal behind the HackerPair project was to demonstrate how to
-present highly localized data. In order to present the seed data in the
-most realistic fashion possible, I assembled location data from a variety of
-free online resources (see Credits) which matches zip codes with
-latitudinal and longitudinal coordinates, cities, and states. This
-information is used in the user and event seeders to aid in the generation
-of seemingly realistic data.
-
-Before this data can be used in the seeders, it needs to be compiled using
-the following custom Artisan console command. The script will download two
-source files from GitHub and http://federalgovernmentzipcodes.us/ (a free database containing zip code data), and then assemble a final seed file which will be used in Step #5:
-
-    $ php artisan hackerpair:compile_zip_code_data
-
-Once the command is completed, you'll find a new file inside `database/seeds/data`
-named `hackerpair_zips.csv`. This file is used within the seeders to
-generate location data.
-
-### Step #6. Run the Seeder
+### Step #5. Run the Seeder
 
 Finally, run the Artisan seeder to populate the database with seed data:
 
     $ php artisan db:seed
 
-The seeder requires a few minutes to run due to the time required to seed
-the zip codes table.
+I thought HackerPair would be much more interesting if the example events were associated with actual cities found throughout the United States. In order to present the seed data in the most realistic fashion possible, I assembled location data from a variety of free online resources (see Credits) which matches zip codes with latitudinal and longitudinal coordinates, cities, and states. This
+information is used in the user and event seeders to aid in the generation
+of seemingly realistic data. If you're repeatedly running the seeder then chances are you'll get tired of waiting a few additional seconds for the zip code data to load. If so just open up the `database/seeds/data/zips.csv` file and delete a bunch of the records.
 
 ## Upcoming Features
 
@@ -153,8 +134,7 @@ Overflow and blog posts which helped me sort out the associated code.
 
 ## License
 
-This project is MIT licensed (see LICENSE.markdown). Please do not use the HackerPair name, the 
-Easy Laravel 5 book cover, or other intellectual property without written permission from the appropriate parties.
+This project is MIT licensed (see LICENSE.markdown). Please do not use the HackerPair name, the Easy Laravel 5 book cover, or other intellectual property without written permission from the appropriate parties.
 
 ## Questions
 

@@ -20,23 +20,21 @@ class ZipCodesTableSeeder extends Seeder
         DB::statement( 'TRUNCATE zip_codes' );
 
         // Process zip codes
-        $zipFile = database_path() . '/seeds/data/hackerpair_zips.csv';
+        $zipFile = database_path() . '/seeds/data/zips.csv';
 
         $data = file($zipFile);
 
         foreach($data as $line)
         {
 
-            list($zip, $latitude, $longitude, $city, $stateAbbreviation) = explode(",", trim($line));
-
-            $state = State::where('abbreviation', $stateAbbreviation)->first();
+            list($zip, $city, $state_id, $latitude, $longitude) = explode(",", trim($line));
 
             $zipCode = new ZipCode();
             $zipCode->zip = $zip;
             $zipCode->lat = $latitude;
             $zipCode->lng = $longitude;
             $zipCode->city = $city != "" ? str_replace('"', '', $city) : NULL;
-            $zipCode->state_id = $state ? $state->id : NULL;
+            $zipCode->state_id = $state_id;
 
             $zipCode->save();
 

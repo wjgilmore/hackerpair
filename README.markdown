@@ -93,12 +93,9 @@ currently no or little support for:
 
 * Query Optimization: Not all of the queries are optimized. Forthcoming.
 
-* Search: I'm planning on integrating Algolia search, and additionally
+* Search and Column Sorting: I'm planning on integrating Algolia search, and additionally
   demonstrating how to create powerful search-driven data filters using
   scopes.
-
-* Column sorting: This is a very high priority and should be integrated as soon
-as I can write the companion instructional material.
 
 * Event Lifecycle Improvements: All sorts of interesting concepts can be
 introduced by adding event lifecycle features. Forthcoming.

@@ -20,7 +20,7 @@ following command:
 
     $ git@github.com:wjgilmore/hackerpair.git
 
-### Step #2. Copy .env.example to .env
+### Step #2. Update the Configuration Files
 
 Enter the repository directory and copy the project configuration file
 template (`.env.example`) to one which will be recognized by your local
@@ -53,6 +53,8 @@ meaning you'll need to install and configure one separately if you
 haven't already done so. You'll also need to create the database and
 associated settings, using these values to populate the above settings
 in your `.env` file.
+
+If you want to run the tests, you'll also need to update `.env.dusk.local` and `phpunit.xml`.
 
 ### Step #3. Update the Vue Configuration File
 
@@ -139,5 +141,3 @@ This project is MIT licensed (see LICENSE.markdown). Please do not use the Hacke
 ## Questions
 
 Have questions, problems, or suggestions? E-mail Jason at wj@wjgilmore.com.
-
-

@@ -25,7 +25,7 @@
             @include('events.hosted._form')
 
             <div class="form-group">
-                {!! Form::submit('Edit Event', ['class' => 'btn btn-info btn-lg', 'style' => 'width: 100%']) !!}
+                {!! Form::submit('Edit Event', ['class' => 'submit btn btn-info btn-lg', 'style' => 'width: 100%']) !!}
             </div>
 
             {!! Form::close() !!}

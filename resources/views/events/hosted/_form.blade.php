@@ -60,5 +60,5 @@
 
 <div class="form-group">
     {!! Form::label('published', "Publish this event immediately?", ['class' => 'control-label']) !!}
-    {!! Form::checkbox('published', isset($event) and $event->published == 1 ? true : old('published'), ['class' => 'form-control input-lg'] ) !!}
+    {!! Form::checkbox('published', 1, isset($event) and $event->published == 1 ? true : old('published'), ['class' => 'form-control input-lg'] ) !!}
 </div>

@@ -1,11 +1,13 @@
 <template>
     <datepicker
         format="yyyy-MM-dd"
+        id="start_date"
+        dusk="date-picker-component"
         :monday-first="true"
         :bootstrap-styling="true"
         :calendar-button="true"
         calendar-button-icon="fa fa-calendar"
-        input-class="form-control input-lg"
+        input-class="date-picker form-control input-lg"
         wrapper-class="form-group has-feedback"
         :placeholder=placeholder
         :name=name

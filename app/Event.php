@@ -17,6 +17,8 @@ class Event extends Model
     use Sluggable,
         SluggableScopeHelpers;
 
+    protected $published = false;
+
     protected $dates = [
         'created_at',
         'start_date',

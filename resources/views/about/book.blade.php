@@ -34,20 +34,21 @@
 
             <p>
                 <i>Easy Laravel 5</i> is veteran PHP developer and consultant W. Jason Gilmore's bestselling book on the
-                popular Laravel framework. First released in early 2015, Easy Laravel 5 has gone on to sell thousands
-                of copies to readers around the globe, and thanks to a lean publishing approach, was updated literally
+                popular Laravel framework. First released in early 2015, thousands
+                of readers from around the globe have since purchased the book,
+                and thanks to a lean publishing approach, was updated literally
                 hundreds of times throughout 2015 and 2016.
             </p>
 
             <p>
                 After a hiatus away from the book while working on several enterprise Laravel projects,
-                the author W. Jason Gilmore has been hard at work bringing the book current for Laravel 5.5, and adding
+                in recent months Jason has been hard at work bringing the book current for Laravel 5.5, and adding
                 a great deal of new and revised material.
             </p>
 
             <p>
                 Head over to <a href="http://www.easylaravelbook.com">the book website</a> to learn how to purchase the
-                book from Gumroad and Leanpub. The price <b>will increase</b> as new material is added, so purchase now
+                beta version from Gumroad and Leanpub. The price <b>will increase</b> as new material is added, so purchase now
                 and you'll receive free book updates for life!
             </p>
 
@@ -57,7 +58,7 @@
                 I'm W. Jason Gilmore, a software developer, consultant, and bestselling author.
             I've spent much of the past 17 years helping companies of all sizes build amazing technology solutions.
             Recent projects include an API for one of the world's highest volume robocall blockers, a SaaS for the
-            interior design and architecture industries, an intranet application for a major South American avocado
+            interior design and architecture industries, an intranet application for a large South American
             farm, an e-commerce analytics application for a globally recognized publisher, and a 10,000+ product online
             store for the environmental services industry.
             </p>

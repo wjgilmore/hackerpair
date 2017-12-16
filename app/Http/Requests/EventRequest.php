@@ -28,10 +28,17 @@ class EventRequest extends FormRequest
 
         return [
             'name'          => 'required|min:10|max:50',
+            'category_id'   => 'required|integer',
             'max_attendees' => 'required|integer',
             'start_date'    => 'required',
             'start_time'    => 'required',
-            'description'   => 'required'
+            'oneliner'      => 'required|min:10|max:50',
+            'description'   => 'required',
+            'venue'         => 'required',
+            'street'        => 'required',
+            'city'          => 'required',
+            'state_id'      => 'required|integer',
+            'zip'           => 'required'
         ];
     }
 
@@ -43,8 +50,17 @@ class EventRequest extends FormRequest
             'max_attendees.required'       => 'What is the maximum number of attendees allowed to attend your event?',
             'name.min'                     => 'Event names must consist of at least 10 characters',
             'name.max'                     => 'Event names cannot be longer than 50 characters',
+            'oneliner.required'            => 'Please assign a one line event description',
+            'oneliner.min'                 => 'The oneline description should consist of more than 10 characters',
+            'oneliner.max'                 => 'The oneline description should consist of less than 50 characters',
             'start_date.required'          => 'Please provide an event date',
-            'start_time.required'          => 'Please provide an event starting time'
+            'start_time.required'          => 'Please provide an event starting time',
+            'description.required'         => 'Please provide a description',
+            'venue.required'               => 'Please provide a venue name (Pizza Cafe, Bob\'s Bar, etc.)',
+            'street.required'              => 'Please provide the venue\'s street address',
+            'city.required'                => 'Please provide the venue\'s city',
+            'state_id.required'            => 'Please provide the venue\'s state (Ohio, etc)',
+            'zip.required'                 => 'Please provide the venue\'s zip code'
         ];
 
     }

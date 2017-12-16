@@ -1,3 +1,11 @@
+<nav class="navbar navbar-expand-lg navbar-custom navbar-static-top" style="background-color: #F9B608">
+    <div class="container" style="text-align: center">
+        <div class="col">
+            HackerPair is currently a <strong>demo</strong> project. Data is regularly deleted.
+            {!! link_to_route('about.index', 'More') !!}
+        </div>
+    </div>
+</nav>
 <nav class="navbar navbar-expand-lg navbar-custom navbar-static-top" style="background-color: #0D2133;">
     <div class="container">
 

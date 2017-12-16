@@ -12,6 +12,11 @@ use App\User;
 class UserHostedEventsController extends Controller
 {
 
+    public function __construct()
+    {
+        $this->authorizeResource(\App\Event::class);
+    }
+
     public function index(User $user)
     {
         $events = $user->hostedEvents()->paginate();

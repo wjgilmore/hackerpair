@@ -82,6 +82,18 @@ I thought HackerPair would be much more interesting if the example events were a
 information is used in the user and event seeders to aid in the generation
 of seemingly realistic data. If you're repeatedly running the seeder then chances are you'll get tired of waiting a few additional seconds for the zip code data to load. If so just open up the `database/seeds/data/zips.csv` file and delete a bunch of the records.
 
+### Step #6. Fire Up the Elixir Watcher
+
+HackerPair uses Laravel Elixir to handle tedious tasks such as CSS and Vue compilation. You'll need to install Elixir and a few other npm packages using the following command:
+
+    $ npm install
+
+Then run the following command to build the CSS and Vue.js components:
+
+    $ npm run watch
+
+If you don't know what Elixir or npm is, check out chapter 2.
+
 ## Upcoming Features
 
 HackerPair is not yet "feature complete" so please don't complain about the project not yet including more advanced Laravel examples. I'll be adding those in the weeks to come.

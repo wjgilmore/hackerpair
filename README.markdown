@@ -131,6 +131,8 @@ In addition, throughout the code you'll find the occasional "hat tip",
 denoted by "HT", pointing to various online resources such as Stack
 Overflow and blog posts which helped me sort out the associated code.
 
+The header background was generated using the Google Maps styling created by Adam Krogh and found at [https://snazzymaps.com/style/38/shades-of-grey](Snazzy Maps).
+
 ## License
 
 This project is MIT licensed (see LICENSE.markdown). Please do not use the HackerPair name, the Easy Laravel 5 book cover, or other intellectual property without written permission from the appropriate parties.

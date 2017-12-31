@@ -1,3 +1,4 @@
+@if (App::environment('production'))
 <nav class="navbar navbar-expand-lg navbar-custom navbar-static-top" style="background-color: #F9B608">
     <div class="container" style="text-align: center">
         <div class="col">
@@ -6,6 +7,7 @@
         </div>
     </div>
 </nav>
+@endif
 <nav class="navbar navbar-expand-lg navbar-custom navbar-static-top" style="background-color: #0D2133;">
     <div class="container">
 

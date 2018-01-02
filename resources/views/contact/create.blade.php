@@ -69,6 +69,7 @@
             </div>
 
             <div class="form-group">
+                {!! Form::label('msg', 'Message') !!}
                 {!! Form::textarea('msg', null, ['class' => 'form-control']) !!}
             </div>
 

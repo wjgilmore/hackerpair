@@ -15,6 +15,7 @@ class WelcomeController extends Controller
         $events = Event::with(['category', 'organizer', 'state'])
             ->orderBy('start_date', 'desc')
             ->paginate();
+
         return view('welcome.index')->with('events', $events);
 
     }

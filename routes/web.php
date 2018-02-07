@@ -28,3 +28,7 @@ Route::resource('states', 'StatesController');
 Route::resource('states.categories', 'StatesCategoriesController');
 Route::resource('tickets', 'TicketsController');
 
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'admin'], function()
+{
+    Route::resource('users', 'UsersController');
+});
